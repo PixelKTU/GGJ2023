@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class RoundSystem : MonoBehaviour
 {
-    [SerializeField] List<RoundData> roundDataList;
+    [SerializeField] List<RoundData> roundDataList = new List<RoundData>();
 
     public static UnityEvent roundStartEvent { get; private set; }
     public static UnityEvent roundEndEvent { get; private set; }
@@ -34,14 +34,21 @@ public class RoundSystem : MonoBehaviour
     
     public RoundData GetThisRoundData()
     {
+       // Debug.Log(roundNumber - 1);
         return roundDataList[roundNumber - 1];
     }
 
+    IEnumerator testas()
+    {
+
+        yield return new WaitForSeconds(1);
+        StartRound();
+    }
 
     void Awake()
     {
+        StartCoroutine(testas());
         roundNumber = 1;
-        roundDataList = new List<RoundData>();
         if (roundStartEvent == null)
         {
             roundStartEvent = new UnityEvent();

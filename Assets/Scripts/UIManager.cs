@@ -2,26 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
     [SerializeField] private TMP_Text rootsText;
     [SerializeField] private TMP_Text incomeText;
     [SerializeField] private TMP_Text roundsText;
 
+    [Header("UI Screens")]
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject loseScreen;
+
+
     void Start()
     {
+        GameManager.Instance.OnGameStateChange += OnGameStateChange;
         RoundSystem.roundStartEvent.AddListener(OnRoundStarted);
         RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
         CurrencyManager.Instance.OnCurrencyUpdated += OnCurrencyUpdated;
         CurrencyManager.Instance.OnIncomeUpdated += OnIncomeUpdated;
 
+        loseScreen.SetActive(false);
+        winScreen.SetActive(false);
         SetInitialText();
     }
 
 
     private void OnDestroy()
     {
+        GameManager.Instance.OnGameStateChange -= OnGameStateChange;
         RoundSystem.roundStartEvent.RemoveListener(OnRoundStarted);
         RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
         CurrencyManager.Instance.OnCurrencyUpdated -= OnCurrencyUpdated;
@@ -53,5 +64,25 @@ public class UIManager : MonoBehaviour
     private void OnRoundEnded()
     {
         roundsText.text = $"Upcoming Round {RoundSystem.roundNumber}";
+    }
+
+
+
+    private void OnGameStateChange(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.Defeat:
+                loseScreen.SetActive(true);
+                break;
+            case GameState.Won:
+                winScreen.SetActive(true);
+                break;
+        }
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

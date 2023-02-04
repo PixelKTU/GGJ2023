@@ -44,6 +44,9 @@ class EnemySpawnerData
 
 public class EnemySpawningSystem : MonoBehaviour
 {
+
+    public static EnemySpawningSystem Instance;
+
     [SerializeField] RoundSystem roundSystem;
     [SerializeField] GameObject enemyPrefab;
 
@@ -94,6 +97,14 @@ public class EnemySpawningSystem : MonoBehaviour
         enemyPool = new ObjectPool<GameObject>(CreateEnemyObject, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject);
         RoundSystem.roundStartEvent.AddListener(RoundStarted);
 
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void Update()

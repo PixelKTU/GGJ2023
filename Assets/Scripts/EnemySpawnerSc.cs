@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawnerSc : MonoBehaviour
 {
     [SerializeField] bool active = false;
-    [SerializeField] EnemySpawningSystem enemySpawningSystem;
     [SerializeField] float spawnsPerMinute = 60;
 
 
@@ -15,7 +14,7 @@ public class EnemySpawnerSc : MonoBehaviour
         if (oneTime && active)
         {
             oneTime = false;
-            enemySpawningSystem.RegisterEnemySpawner(spawnsPerMinute, transform.position);
+            EnemySpawningSystem.Instance.RegisterEnemySpawner(spawnsPerMinute, transform.position);
         }
     }
 }

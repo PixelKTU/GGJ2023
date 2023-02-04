@@ -7,8 +7,8 @@ public class CameraControler : MonoBehaviour
 
     [SerializeField] float cameraMoveSpeed;
     [SerializeField] float scrollSpeed;
-    [SerializeField] float defaultCameraHeight;
-    [SerializeField] float minCameraHeight;
+    [SerializeField] Vector3 minCoordinates;
+    [SerializeField] Vector3 maxCoordinates;
     [SerializeField] Vector3 defaultRotation;
 
 
@@ -17,7 +17,6 @@ public class CameraControler : MonoBehaviour
     private void Start()
     {
         transform.rotation = Quaternion.Euler(defaultRotation);
-        transform.position = new Vector3(transform.position.x, defaultCameraHeight, transform.position.z);
 
         rightDir = transform.right;
         rightDir.y = 0;
@@ -26,6 +25,15 @@ public class CameraControler : MonoBehaviour
         forwardDir = transform.forward;
         forwardDir.y = 0;
         forwardDir.Normalize();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector3 pos = (maxCoordinates + minCoordinates)/ 2;
+        Vector3 size = Vector3.Max(maxCoordinates - minCoordinates, minCoordinates - maxCoordinates );
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(pos, size);
     }
 
     private void Update()
@@ -46,24 +54,24 @@ public class CameraControler : MonoBehaviour
 
             scrollMovementDir += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed * transform.forward * Time.deltaTime;
 
-            if (transform.position.y + scrollMovementDir.y < minCameraHeight)
+            if (transform.position.y + scrollMovementDir.y < minCoordinates.y)
             {
-                float multiplier = (minCameraHeight - (transform.position.y + scrollMovementDir.y)) / transform.forward.y;
+                float multiplier = (minCoordinates.y - (transform.position.y + scrollMovementDir.y)) / transform.forward.y;
                 scrollMovementDir += transform.forward * multiplier;
-            }else if (transform.position.y + scrollMovementDir.y > defaultCameraHeight)
+            }else if (transform.position.y + scrollMovementDir.y > maxCoordinates.y)
             {
-                float multiplier = ((transform.position.y + scrollMovementDir.y) - defaultCameraHeight) / transform.forward.y;
+                float multiplier = ((transform.position.y + scrollMovementDir.y) - maxCoordinates.y) / transform.forward.y;
                 scrollMovementDir -= transform.forward * multiplier;
             }
         }
 
-        /* float mag = movementDir.magnitude;
-         if (mag > 1)
-         {
-             movementDir = movementDir / mag;
-         }*/
-        
-        transform.position += movementDir * Time.deltaTime + scrollMovementDir;
+        Vector3 nextPos = transform.position + movementDir * Time.deltaTime + scrollMovementDir;
+
+        nextPos = new Vector3(Mathf.Max(minCoordinates.x, Mathf.Min(maxCoordinates.x, nextPos.x)),
+                              Mathf.Max(minCoordinates.y, Mathf.Min(maxCoordinates.y, nextPos.y)),
+                              Mathf.Max(minCoordinates.z, Mathf.Min(maxCoordinates.z, nextPos.z)));
+
+        transform.position = nextPos;
     }
 
 }

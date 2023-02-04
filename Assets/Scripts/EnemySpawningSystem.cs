@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,13 @@ class EnemySpawnerData
 {
     public float spawnsPerMinute { get; private set; }
     public Vector3 spawnPosition { get; private set; }
+    public EnemyType enemyType { get; private set; }
 
     float spawnVal;
     public void ResetEnemySpawning(float timeOffset = 0)
     {
-        if (spawnsPerMinute == 0) {
+        if (spawnsPerMinute == 0)
+        {
             spawnVal = Mathf.Infinity;
         }
         else
@@ -34,25 +37,35 @@ class EnemySpawnerData
         return ans;
     }
 
-    public EnemySpawnerData(float spawnsPerMinute, Vector3 spawnPosition)
+    public EnemySpawnerData(float spawnsPerMinute, Vector3 spawnPosition, EnemyType enemyType = 0)
     {
         this.spawnsPerMinute = spawnsPerMinute;
         this.spawnPosition = spawnPosition;
+        this.enemyType = enemyType;
     }
+}
+
+public enum EnemyType
+{
+    Drone,
+    Crab,
 }
 
 public class EnemySpawningSystem : MonoBehaviour
 {
+
+    public static EnemySpawningSystem Instance;
+
     [SerializeField] RoundSystem roundSystem;
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] List<GameObject> enemyPrefabs = new List<GameObject>();
 
     List<EnemySpawnerData> enemySpawnerDataList = new List<EnemySpawnerData>();
-    IObjectPool<GameObject> enemyPool;
+    List<IObjectPool<GameObject>> enemyPool = new List<IObjectPool<GameObject>>();
 
     public static int enemiesLeft { get; private set; }
     int enemiesLeftToSpawn;
 
-    public void RegisterEnemySpawner(float spawnsPerMinute, Vector3 spawnPosition) 
+    public void RegisterEnemySpawner(float spawnsPerMinute, Vector3 spawnPosition)
     {
         enemySpawnerDataList.Add(new EnemySpawnerData(spawnsPerMinute, spawnPosition));
     }
@@ -66,33 +79,43 @@ public class EnemySpawningSystem : MonoBehaviour
         {
             data.ResetEnemySpawning();
         }
-      //  roundStarted = true;
+        //  roundStarted = true;
     }
 
 
-    void SpawnEnemies(Vector3 position, int count)
+    void SpawnEnemies(Vector3 position, int count, EnemyType type = 0)
     {
         for (int i = 0; i < count; i++)
         {
-            GameObject obj = enemyPool.Get();
+            GameObject obj = enemyPool[(int)type].Get();
             obj.transform.position = position;
         }
         enemiesLeft += count;
     }
 
 
-    public void RemoveEnemy(GameObject obj)
+    public void RemoveEnemy(GameObject obj, EnemyType type = 0)
     {
-        enemyPool.Release(obj);
+        enemyPool[(int)type].Release(obj);
         enemiesLeft--;
     }
 
 
     void Start()
     {
-        enemyPool = new ObjectPool<GameObject>(CreateEnemyObject, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject);
+        enemyPool.Add(new ObjectPool<GameObject>(CreateEnemyObject1, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject));
+        enemyPool.Add(new ObjectPool<GameObject>(CreateEnemyObject2, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject));
+
         RoundSystem.roundStartEvent.AddListener(RoundStarted);
 
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void Update()
@@ -108,7 +131,7 @@ public class EnemySpawningSystem : MonoBehaviour
                     enemyCount = Mathf.Min(enemiesLeftToSpawn, enemyCount);
                     enemiesLeftToSpawn -= enemyCount;
 
-                    SpawnEnemies(data.spawnPosition, enemyCount);
+                    SpawnEnemies(data.spawnPosition, enemyCount, data.enemyType);
                 }
             }
             if (enemiesLeft <= 0 && enemiesLeftToSpawn <= 0)
@@ -116,12 +139,21 @@ public class EnemySpawningSystem : MonoBehaviour
                 RoundSystem.EndRound();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            enemiesLeft = 0;
+        }
     }
 
 
-    GameObject CreateEnemyObject()
+    GameObject CreateEnemyObject1()
     {
-        return Instantiate(enemyPrefab);
+        return Instantiate(enemyPrefabs[0]);
+    }
+    GameObject CreateEnemyObject2()
+    {
+        return Instantiate(enemyPrefabs[1]);
     }
     void GetEnemyObject(GameObject obj)
     {

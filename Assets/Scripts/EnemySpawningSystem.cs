@@ -47,9 +47,10 @@ class EnemySpawnerData
 
 public enum EnemyType
 {
-    Drone,
-    Crab,
-}
+    Scorpion,
+    Mech,
+    Cannon
+};
 
 public class EnemySpawningSystem : MonoBehaviour
 {

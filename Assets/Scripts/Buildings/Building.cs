@@ -21,7 +21,6 @@ public class Building : MonoBehaviour
 
     private void Start()
     {
-        EnableBuilding();
         RoundSystem.roundStartEvent.AddListener(OnRoundStarted);
         RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
     }

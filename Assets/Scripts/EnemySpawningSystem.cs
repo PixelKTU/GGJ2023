@@ -47,9 +47,10 @@ class EnemySpawnerData
 
 public enum EnemyType
 {
-    Drone,
-    Crab,
-}
+    Scorpion,
+    Mech,
+    Cannon
+};
 
 public class EnemySpawningSystem : MonoBehaviour
 {
@@ -103,18 +104,21 @@ public class EnemySpawningSystem : MonoBehaviour
     }
 
 
-    public GameObject GetNearestEnemy(Vector3 position)
+    public GameObject GetNearestAliveEnemy(Vector3 position)
     {
         GameObject ans = null;
         float dist = Mathf.Infinity;
         float temp;
         foreach (GameObject obj in aliveEnemies)
         {
-            temp = (position - obj.transform.position).sqrMagnitude;
-            if (temp < dist)
+            if (obj.GetComponent<Enemy>().imaginaryHealth > 0)
             {
-                ans = obj;
-                dist = temp;
+                temp = (position - obj.transform.position).sqrMagnitude;
+                if (temp < dist)
+                {
+                    ans = obj;
+                    dist = temp;
+                }
             }
         }
         return ans;
@@ -125,6 +129,7 @@ public class EnemySpawningSystem : MonoBehaviour
     {
         enemyPool.Add(new ObjectPool<GameObject>(CreateEnemyObject1, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject));
         enemyPool.Add(new ObjectPool<GameObject>(CreateEnemyObject2, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject));
+        enemyPool.Add(new ObjectPool<GameObject>(CreateEnemyObject3, GetEnemyObject, ReserveEnemyObject, DestroyEnemyObject));
 
         RoundSystem.roundStartEvent.AddListener(RoundStarted);
 
@@ -176,6 +181,12 @@ public class EnemySpawningSystem : MonoBehaviour
     GameObject CreateEnemyObject2()
     {
         GameObject obj = Instantiate(enemyPrefabs[1]);
+        obj.GetComponent<Enemy>().ResetData();
+        return obj;
+    }
+    GameObject CreateEnemyObject3()
+    {
+        GameObject obj = Instantiate(enemyPrefabs[2]);
         obj.GetComponent<Enemy>().ResetData();
         return obj;
     }

@@ -126,7 +126,7 @@ public class ProceduralVine : MonoBehaviour
                 spline.Add(knot);
             }
 
-            Instantiate(vineEndings[Random.Range(0, vineEndings.Length - 1)], nodes[nodes.Count - 1].getPosition(),Quaternion.FromToRotation(dir,hit.normal));
+            Instantiate(vineEndings[Random.Range(0, vineEndings.Length - 1)], nodes[nodes.Count - 1].getPosition()-Vector3.up*0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up)*Quaternion.AngleAxis(-90, Vector3.right));
         }
 
         vineCount++;

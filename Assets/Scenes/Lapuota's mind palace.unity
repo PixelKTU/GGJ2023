@@ -155,8 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1422601669}
   vineOrigin: {fileID: 289152189}
-  vineEnding: {fileID: 385458657617229997, guid: 01f6a770d650b2c4dbd65151f5fd504f,
-    type: 3}
+  vineEndings:
+  - {fileID: 919132149155446097, guid: a124b3bc80c30874fba280ab6728be3b, type: 3}
+  - {fileID: 919132149155446097, guid: d60d680e546500e4a87374ae2ebd8471, type: 3}
+  - {fileID: 919132149155446097, guid: 81ed580bd99a72e40aa1833c64903cad, type: 3}
   recycleInterval: 30
   branches: 3
   maxPointsForBranch: 20
@@ -735,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731660194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 15.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

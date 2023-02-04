@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
 
+    [Header("Next round button")]
+    [SerializeField] private GameObject nextRoundButtonObj;
+
 
     void Start()
     {
@@ -63,9 +66,16 @@ public class UIManager : MonoBehaviour
 
     private void OnRoundEnded()
     {
+        nextRoundButtonObj.SetActive(true);
         roundsText.text = $"Upcoming Round {RoundSystem.roundNumber}";
     }
 
+
+    public void TransitionToNextRound()
+    {
+        nextRoundButtonObj.SetActive(false);
+        RoundSystem.StartRound();
+    }
 
 
     private void OnGameStateChange(GameState gameState)

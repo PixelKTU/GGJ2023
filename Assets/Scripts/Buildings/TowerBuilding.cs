@@ -7,6 +7,7 @@ public class TowerBuilding : Building
     [SerializeField] float towerRange = 3;
     [SerializeField] float towerDamage = 1;
     [SerializeField] float shootingCooldown = 1;
+    [SerializeField] GameObject bulletPrefab;
 
 
     bool isShooting = false;
@@ -28,7 +29,8 @@ public class TowerBuilding : Building
 
     void Shoot(GameObject enemy)
     {
-
+        enemy.GetComponent<Enemy>().TakeImaginaryDamage(towerDamage);
+        BulletManager.Instance.SpawnBullet(transform.position, enemy, towerDamage);
     }
 
     protected override void OnRoundStarted()
@@ -43,15 +45,20 @@ public class TowerBuilding : Building
 
     void Update()
     {
+        EnableBuilding();
         if (reachedByRoots && !onCooldown && isShooting)
         {
-            GameObject enem = EnemySpawningSystem.Instance.GetNearestEnemy(transform.position);
-            Vector3 enemPosition = enem.transform.position;
-            if ((enemPosition-transform.position).sqrMagnitude <= towerRange * towerRange)
+            GameObject enem = EnemySpawningSystem.Instance.GetNearestAliveEnemy(transform.position);
+            if (enem != null)
             {
-                Shoot(enem);
-                onCooldown = true;
-                StartCoroutine(CooldownWait());
+                Vector3 enemPosition = enem.transform.position;
+                if ((enemPosition - transform.position).sqrMagnitude <= towerRange * towerRange)
+                {
+
+                    Shoot(enem);
+                    onCooldown = true;
+                    StartCoroutine(CooldownWait());
+                }
             }
         }
     }

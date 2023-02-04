@@ -156,8 +156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerRange: 5.47
-  towerDamage: 1
+  towerDamage: 3
   shootingCooldown: 1
+  bulletPrefab: {fileID: 9218508020589602165, guid: d5e940c85f12a91429f7e65844cc1f2e,
+    type: 3}
 --- !u!135 &4444432
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4444430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9341062, y: 1.0808095, z: 6.203779}
+  m_LocalPosition: {x: -12.81, y: 1.0808095, z: 3.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -362,6 +364,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &463868904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7047763477253463848, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749264804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &463868911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463868904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109cf4956e7b0a42b515ec8c98eab70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 9218508020589602165, guid: d5e940c85f12a91429f7e65844cc1f2e,
+    type: 3}
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +732,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7047763477253463848, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 463868911}
   m_SourcePrefab: {fileID: 100100000, guid: 19b89a5ad63a9164c81e25da8c4a86b9, type: 3}
 --- !u!1001 &1935544247
 PrefabInstance:

@@ -104,18 +104,21 @@ public class EnemySpawningSystem : MonoBehaviour
     }
 
 
-    public GameObject GetNearestEnemy(Vector3 position)
+    public GameObject GetNearestAliveEnemy(Vector3 position)
     {
         GameObject ans = null;
         float dist = Mathf.Infinity;
         float temp;
         foreach (GameObject obj in aliveEnemies)
         {
-            temp = (position - obj.transform.position).sqrMagnitude;
-            if (temp < dist)
+            if (obj.GetComponent<Enemy>().imaginaryHealth > 0)
             {
-                ans = obj;
-                dist = temp;
+                temp = (position - obj.transform.position).sqrMagnitude;
+                if (temp < dist)
+                {
+                    ans = obj;
+                    dist = temp;
+                }
             }
         }
         return ans;

@@ -41,7 +41,7 @@ public class RoundSystem : MonoBehaviour
     IEnumerator testas()
     {
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         StartRound();
     }
 

@@ -12,7 +12,8 @@ class EnemySpawnerData
     float spawnVal;
     public void ResetEnemySpawning(float timeOffset = 0)
     {
-        if (spawnsPerMinute == 0) {
+        if (spawnsPerMinute == 0)
+        {
             spawnVal = Mathf.Infinity;
         }
         else
@@ -52,7 +53,7 @@ public class EnemySpawningSystem : MonoBehaviour
     public static int enemiesLeft { get; private set; }
     int enemiesLeftToSpawn;
 
-    public void RegisterEnemySpawner(float spawnsPerMinute, Vector3 spawnPosition) 
+    public void RegisterEnemySpawner(float spawnsPerMinute, Vector3 spawnPosition)
     {
         enemySpawnerDataList.Add(new EnemySpawnerData(spawnsPerMinute, spawnPosition));
     }
@@ -66,7 +67,7 @@ public class EnemySpawningSystem : MonoBehaviour
         {
             data.ResetEnemySpawning();
         }
-      //  roundStarted = true;
+        //  roundStarted = true;
     }
 
 
@@ -115,6 +116,11 @@ public class EnemySpawningSystem : MonoBehaviour
             {
                 RoundSystem.EndRound();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            enemiesLeft = 0;
         }
     }
 

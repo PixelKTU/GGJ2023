@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,13 @@ public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance;
 
+    public Action<int> OnCurrencyUpdated;
+    public Action<int> OnIncomeUpdated;
+
     private int currentRoots;
     private int currentIncome;
+
+
 
     void Awake()
     {
@@ -22,6 +28,21 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            AddRoots(1);
+            AddIncome(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            AddRoots(-1);
+            AddIncome(-1);
+        }
+    }
+
     /// <summary>
     /// Can be used to add or remove roots from the player
     /// </summary>
@@ -29,6 +50,7 @@ public class CurrencyManager : MonoBehaviour
     public void AddRoots(int rootCount)
     {
         currentRoots += rootCount;
+        OnCurrencyUpdated?.Invoke(currentRoots);
     }
 
     /// <summary>
@@ -56,6 +78,7 @@ public class CurrencyManager : MonoBehaviour
     public void AddIncome(int num)
     {
         currentIncome += num;
+        OnIncomeUpdated?.Invoke(currentIncome);
     }
 
     //just reset info

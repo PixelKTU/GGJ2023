@@ -256,7 +256,7 @@ Transform:
   - {fileID: 7846799481837027167}
   - {fileID: 9142646902416135678}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9150982055181775213
 Animator:
@@ -294,7 +294,7 @@ MonoBehaviour:
   maxHealth: 10
   enemyType: 0
   damage: 1
-  attackDistance: 3
+  attackDistance: 4
   attackCooldown: 1
   animator: {fileID: 9150982055181775213}
   agent: {fileID: 1227420658548042511}

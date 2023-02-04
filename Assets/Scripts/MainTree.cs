@@ -9,6 +9,7 @@ public class MainTree : MonoBehaviour
     public Action<float, float> OnTakeDamage;//current health and damage taken is passed in order
 
     [SerializeField] private float defaultHealth = 100;
+    [SerializeField] private TowerBuilding defaultTower;
 
     private float health;
 
@@ -21,6 +22,11 @@ public class MainTree : MonoBehaviour
         }
     }
 
+
+    private void Start()
+    {
+        defaultTower.EnableBuilding();
+    }
 
     void Update()
     {

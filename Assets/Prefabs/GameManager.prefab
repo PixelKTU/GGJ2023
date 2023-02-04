@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5968224777494994804}
   - component: {fileID: -7841058752346473969}
   - component: {fileID: 9172990866579948605}
+  - component: {fileID: 463868911}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8590303371272909302
 MonoBehaviour:
@@ -102,4 +103,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundSystem: {fileID: 5968224777494994804}
   enemyPrefabs:
+  - {fileID: 5397073466791705569, guid: 1b708d5bce371c747b7dc7a2a9368be0, type: 3}
   - {fileID: 3931987205153743325, guid: 3cc9056f9faa28b4c9a7cd7a70fd47a1, type: 3}
+  - {fileID: 3931987205153743325, guid: 3cc9056f9faa28b4c9a7cd7a70fd47a1, type: 3}
+--- !u!114 &463868911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047763477253463848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109cf4956e7b0a42b515ec8c98eab70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 9218508020589602165, guid: d5e940c85f12a91429f7e65844cc1f2e,
+    type: 3}

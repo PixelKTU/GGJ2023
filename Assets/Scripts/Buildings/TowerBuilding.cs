@@ -45,7 +45,7 @@ public class TowerBuilding : Building
 
     void Update()
     {
-        EnableBuilding();
+        
         if (reachedByRoots && !onCooldown && isShooting)
         {
             GameObject enem = EnemySpawningSystem.Instance.GetNearestAliveEnemy(transform.position);

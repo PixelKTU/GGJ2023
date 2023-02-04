@@ -1929,6 +1929,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: 0.002832951
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.0023530833
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.033246264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.048572496
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.06606799
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.06680534
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336186960714714792, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

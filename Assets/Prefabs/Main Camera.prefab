@@ -196,22 +196,13 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 0.072844625
-      value: 0.15
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
@@ -224,8 +215,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  animDuration: 3
-  maxIntensity: 0.15
+  animDuration: 1
+  maxIntensity: 0.3
 --- !u!1 &8368996837503985403
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +252,7 @@ Transform:
   - {fileID: 8368996837144597654}
   - {fileID: 8368996837090132261}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!20 &8368996837503985399
 Camera:
@@ -377,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09dfc7eeb9b57940aa555a475e7dfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMoveSpeed: 5
-  scrollSpeed: 120
-  minCoordinates: {x: -26.1, y: 6.31, z: -25.12}
-  maxCoordinates: {x: 26.29, y: 17.26, z: 28.73}
+  cameraMoveSpeed: 15
+  scrollSpeed: 1500
+  minCoordinates: {x: -30, y: 12, z: -30}
+  maxCoordinates: {x: 30, y: 30, z: 30}
   defaultRotation: {x: 45, y: 45, z: 0}

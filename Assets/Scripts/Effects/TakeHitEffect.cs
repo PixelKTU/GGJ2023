@@ -16,6 +16,7 @@ public class TakeHitEffect : MonoBehaviour
 
     void Start()
     {
+        animTime = animDuration;
         MainTree.Instance.OnTakeDamage += OnTreeTakeDamage;
         volume.profile.TryGet<Vignette>(out vignette);
     }

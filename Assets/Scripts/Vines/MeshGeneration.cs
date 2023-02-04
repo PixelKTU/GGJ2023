@@ -16,18 +16,20 @@ public class MeshGeneration : MonoBehaviour
     MeshFilter meshFilter;
     MeshRenderer meshRenderer;
 
-
+    float branchRadiusPerSegment = 0.02f;
     float branchRadius = 0.02f;
+    float minbranchRadius = 0.02f;
     int meshFaces = 8;
 
     float growthSpeed = 2;
     float currentAmount = -1;
 
-    public void init(List<Vine> branchNodes, float branchRadius, Material material)
+    public void init(List<Vine> branchNodes,float minbranchRadius ,float branchRadius, Material material)
     {
         this.branchNodes = branchNodes;
-        this.branchRadius = branchRadius;
+        this.branchRadiusPerSegment = branchRadius;
         this.material = new Material(material);
+        this.minbranchRadius = minbranchRadius;
         mesh = createMesh(branchNodes);
     }
 
@@ -71,7 +73,10 @@ public class MeshGeneration : MonoBehaviour
 
         for (int i = 0; i < nodes.Count; i++)
         {
+            branchRadius = minbranchRadius + branchRadiusPerSegment * (nodes.Count - i);
             float vStep = (2f * Mathf.PI) / meshFaces;
+
+
 
             var fw = Vector3.zero;
             if (i > 0)

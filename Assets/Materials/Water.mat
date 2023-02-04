@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vine
-  m_Shader: {fileID: -6465566751694194690, guid: 39e32f7fdc2fa3c459aa772b593cecfc,
+  m_Name: Water
+  m_Shader: {fileID: -6465566751694194690, guid: 8349b35a0ae045846b0501feaf539f73,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -105,6 +105,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Rippledensity: 1.48
+    - _Rippleslimness: 3.65
+    - _Ripplespeed: 0.76
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -115,11 +118,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Basecolor: {r: 0.19344068, g: 0.27265197, b: 0.5943396, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Ripplecolor: {r: 0.09518511, g: 0.55556166, b: 0.8773585, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1486719782735470063
+--- !u!114 &2264010264860529590
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

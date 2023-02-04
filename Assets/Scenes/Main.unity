@@ -534,10 +534,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 158.381
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
         type: 3}
       propertyPath: m_Name
       value: ScorpION
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

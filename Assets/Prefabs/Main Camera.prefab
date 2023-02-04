@@ -370,6 +370,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveSpeed: 15
   scrollSpeed: 1500
-  minCoordinates: {x: -30, y: 12, z: -30}
-  maxCoordinates: {x: 30, y: 30, z: 30}
+  minCoordinates: {x: -80, y: 12, z: -80}
+  maxCoordinates: {x: 80, y: 30, z: 80}
   defaultRotation: {x: 45, y: 45, z: 0}

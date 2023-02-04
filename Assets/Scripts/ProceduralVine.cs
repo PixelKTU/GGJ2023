@@ -85,7 +85,6 @@ public class ProceduralVine : MonoBehaviour
             Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - closestPoint, hit.normal) -90 + Random.Range(0,10), hit.normal) * tangent;
 
             maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength),2,int.MaxValue);
-            Debug.Log(Mathf.CeilToInt(minDistance / segmentLength));
             List<Vine> nodes = createBranch(maxPointsForBranch, closestPoint, hit.normal, dir);
             GameObject branch = new GameObject("Branch " + i);
             MeshGeneration b = branch.AddComponent<MeshGeneration>();

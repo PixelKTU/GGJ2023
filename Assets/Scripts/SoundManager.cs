@@ -9,11 +9,20 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
+    private AudioSource audioSourceOneShot;
+
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else if (Instance != this) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public void PlaySound(AudioClip clip, Vector3 position, bool isLooping = false)
@@ -45,7 +54,11 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundOneShot(AudioClip clip)
     {
-        AudioSource audio = GameObject.Find("CameraAudioSource").GetComponent<AudioSource>();
-        audio.PlayOneShot(clip);
+        if (audioSourceOneShot == null)
+        {
+            audioSourceOneShot = Camera.main.GetComponentInChildren<AudioSource>();
+        }
+
+        audioSourceOneShot.PlayOneShot(clip);
     }
 }

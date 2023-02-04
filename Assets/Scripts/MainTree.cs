@@ -24,10 +24,7 @@ public class MainTree : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(1);
-        }
+
     }
 
     public Transform GetTransform()

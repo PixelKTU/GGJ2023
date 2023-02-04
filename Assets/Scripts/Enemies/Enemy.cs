@@ -57,12 +57,15 @@ public class Enemy : MonoBehaviour
 
                 currentAttackTime += Time.deltaTime;
 
+                transform.LookAt(target);
+
                 if (currentAttackTime > attackCooldown)
                 {
                     if (CanAttack())
                     {
                         currentAttackTime = 0;
                         animator.SetTrigger("Attack");
+                        animator.SetBool("IsWalking", false);
                         MainTree.Instance.TakeDamage(damage);
                     }
                     else
@@ -79,6 +82,17 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case EnemyState.Walking:
+
+                if (agent.isStopped)
+                {
+                    animator.SetBool("IsWalking", false);
+                    state = EnemyState.Idle;
+                }
+                else if (!agent.isStopped && !animator.GetBool("IsWalking"))
+                {
+                    animator.SetBool("IsWalking", true);
+                }
+
                 if (CanAttack())
                 {
                     Attack(MainTree.Instance.GetTransform());
@@ -129,6 +143,7 @@ public class Enemy : MonoBehaviour
     protected virtual void WalkTo(Vector3 position)
     {
         state = EnemyState.Walking;
+        animator.SetBool("IsWalking", true);
         agent.SetDestination(position);
     }
 
@@ -143,7 +158,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private bool CanAttack()
+    protected bool CanAttack()
     {
         return Vector3.Distance(target.position, transform.position) < attackDistance;
     }

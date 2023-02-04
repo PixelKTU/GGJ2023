@@ -247,17 +247,17 @@ MonoBehaviour:
   cam: {fileID: 0}
   vineOrigin: {fileID: 722266080}
   vineEndings:
-  - {fileID: 919132149155446097, guid: a124b3bc80c30874fba280ab6728be3b, type: 3}
-  - {fileID: 919132149155446097, guid: d60d680e546500e4a87374ae2ebd8471, type: 3}
-  - {fileID: 919132149155446097, guid: 81ed580bd99a72e40aa1833c64903cad, type: 3}
+  - {fileID: 8793151327894304386, guid: 9f794c61b84fa2d4c9599780bb02df4c, type: 3}
+  - {fileID: 6948816005468833944, guid: b5e94d7c7e1e51d4385a645f3cf0e550, type: 3}
+  - {fileID: 1468350007926356748, guid: 08c9a4c48b2672b4c8523e96714a07f7, type: 3}
   recycleInterval: 30
   branches: 3
   maxPointsForBranch: 20
   segmentLength: 0.72
+  maxSegmentRadius: 2
   branchRadiusPerSegment: 0.005
   minbranchRadius: 0.025
-  branchMaterial: {fileID: -3846018093981099296, guid: a124b3bc80c30874fba280ab6728be3b,
-    type: 3}
+  branchMaterial: {fileID: 2100000, guid: 33605ef882fe9224184003e658db7787, type: 2}
   spline:
     m_EditModeType: 1
     m_Knots: []

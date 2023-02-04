@@ -167,6 +167,8 @@ public class ProceduralVine : MonoBehaviour
 
     List<Vine> createBranch(int count, Vector3 pos, Vector3 normal, Vector3 dir, int i)
     {
+        int layer = 6;
+        int layermask = ~(1 << layer);
 
         if (count == maxPointsForBranch)
         {
@@ -186,13 +188,13 @@ public class ProceduralVine : MonoBehaviour
             Ray ray = new Ray(pos, normal);
             Vector3 p1 = pos + normal * segmentLength;
 
-            if (Physics.Raycast(ray, out hit, segmentLength))
+            if (Physics.Raycast(ray, out hit, segmentLength, layermask))
             {
                 p1 = hit.point+new Vector3(0,Random.Range(0, yOffsetWeight),0);
             }
             ray = new Ray(p1, dir);
 
-            if (Physics.Raycast(ray, out hit, segmentLength))
+            if (Physics.Raycast(ray, out hit, segmentLength, layermask))
             {
                 Vector3 p2 = hit.point + new Vector3(0, Random.Range(0, yOffsetWeight), 0);
                 Vine p2Node = new Vine(p2, -dir);
@@ -202,7 +204,7 @@ public class ProceduralVine : MonoBehaviour
             {
                 Vector3 p2 = p1 + dir * segmentLength;
                 ray = new Ray(applyCorrection(p2, normal), -normal);
-                if (Physics.Raycast(ray, out hit, segmentLength))
+                if (Physics.Raycast(ray, out hit, segmentLength, layermask))
                 {
                     Vector3 p3 = hit.point + new Vector3(0, Random.Range(0, yOffsetWeight), 0);
                     Vine p3Node = new Vine(p3, normal);
@@ -227,7 +229,7 @@ public class ProceduralVine : MonoBehaviour
                     Vector3 p3 = p2 - normal * segmentLength;
                     ray = new Ray(applyCorrection(p3, normal), -normal);
 
-                    if (Physics.Raycast(ray, out hit, segmentLength))
+                    if (Physics.Raycast(ray, out hit, segmentLength, layermask))
                     {
                         Vector3 p4 = hit.point + new Vector3(0, Random.Range(0, yOffsetWeight), 0);
                         Vine p4Node = new Vine(p4, normal);

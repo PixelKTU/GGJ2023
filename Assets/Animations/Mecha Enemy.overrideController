@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mecha Enemy
+  m_Controller: {fileID: 9100000, guid: 354c629bfddf4024f85493af62354452, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -27738503524197572, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
+      type: 3}
+    m_OverrideClip: {fileID: -7088983582159096814, guid: 4a068c2c4d8d43e4997d122b0480d825,
+      type: 3}
+  - m_OriginalClip: {fileID: 1873015269612166569, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
+      type: 3}
+    m_OverrideClip: {fileID: 9123635184391227613, guid: 4a068c2c4d8d43e4997d122b0480d825,
+      type: 3}
+  - m_OriginalClip: {fileID: 1406033200188409185, guid: 5a1745c019d5bb74b8bdd579ca8e26d7,
+      type: 3}
+    m_OverrideClip: {fileID: 3991338060973618855, guid: 4a068c2c4d8d43e4997d122b0480d825,
+      type: 3}

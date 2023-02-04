@@ -118,8 +118,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rippledensity: 28.85
-    - _Rippleslimness: 5.26
+    - _Rippledensity: 149.04
+    - _Rippleslimness: 4.98
     - _Ripplespeed: 0.5
     - _Smoothness: 0.729
     - _SmoothnessTextureChannel: 0

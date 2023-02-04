@@ -8,6 +8,7 @@ public class TowerBuilding : Building
     [SerializeField] float towerDamage = 1;
     [SerializeField] float shootingCooldown = 1;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform bulletSpawnPosition;
 
 
     bool isShooting = false;
@@ -16,8 +17,11 @@ public class TowerBuilding : Building
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, towerRange);
+        if (bulletSpawnPosition != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(bulletSpawnPosition.position, towerRange);
+        }
     }
 
 
@@ -30,7 +34,7 @@ public class TowerBuilding : Building
     void Shoot(GameObject enemy)
     {
         enemy.GetComponent<Enemy>().TakeImaginaryDamage(towerDamage);
-        BulletManager.Instance.SpawnBullet(transform.position, enemy, towerDamage);
+        BulletManager.Instance.SpawnBullet(bulletSpawnPosition.position, enemy, towerDamage);
     }
 
     protected override void OnRoundStarted()
@@ -48,11 +52,11 @@ public class TowerBuilding : Building
         
         if (reachedByRoots && !onCooldown && isShooting)
         {
-            GameObject enem = EnemySpawningSystem.Instance.GetNearestAliveEnemy(transform.position);
+            GameObject enem = EnemySpawningSystem.Instance.GetNearestAliveEnemy(bulletSpawnPosition.position);
             if (enem != null)
             {
                 Vector3 enemPosition = enem.transform.position;
-                if ((enemPosition - transform.position).sqrMagnitude <= towerRange * towerRange)
+                if ((enemPosition - bulletSpawnPosition.position).sqrMagnitude <= towerRange * towerRange)
                 {
 
                     Shoot(enem);

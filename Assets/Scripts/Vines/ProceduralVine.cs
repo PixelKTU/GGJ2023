@@ -29,6 +29,8 @@ public class ProceduralVine : MonoBehaviour
     GameObject building = null;
 
     int vineCount = 0;
+    int buildingLayer = 7;
+    int lm; 
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class ProceduralVine : MonoBehaviour
         spline.Add(knot);
         lRender = GetComponent<LineRenderer>();
         yOffsetWeight = minbranchRadius * 4;
+        lm = (1 << buildingLayer);
     }
 
     private void FixedUpdate()
@@ -71,8 +74,6 @@ public class ProceduralVine : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            int l = 7;
-            int lm = ~(1 << l);
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -141,8 +142,10 @@ public class ProceduralVine : MonoBehaviour
                 spline.Add(knot);
             }
 
-            if(Vector3.Distance(building.transform.position, nodes[nodes.Count - 1].getPosition()) < 2f)
+            if (building !=null)
+            if(Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
             {
+
                 ResourceBuilding resourceBuilding;
                 TowerBuilding towerBuilding;
                 if(building.TryGetComponent<ResourceBuilding>(out resourceBuilding))
@@ -154,12 +157,12 @@ public class ProceduralVine : MonoBehaviour
                     towerBuilding.EnableBuilding();
                 }
             }
+            Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
 
             if (Vector3.Distance(hit.point, nodes[nodes.Count - 1].getPosition()) > 10)
             {
                 for (int j = 0; j < branches; j++)
                 {
-                    Debug.Log("Secondary spawn");
                     minDistance = Vector3.Distance(hit.point, nodes[nodes.Count - 1].getPosition());
                     //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
                     segmentLength = minDistance / maxPointsForBranch;
@@ -182,7 +185,10 @@ public class ProceduralVine : MonoBehaviour
                         spline.Add(knot);
                     }
 
-                    if (Vector3.Distance(building.transform.position, nodes[nodes.Count - 1].getPosition()) < 2f)
+                    if (building != null)
+
+
+                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(),1f,lm) != null)
                     {
                         ResourceBuilding resourceBuilding;
                         TowerBuilding towerBuilding;
@@ -196,9 +202,10 @@ public class ProceduralVine : MonoBehaviour
                         }
                     }
                 }
+                Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
             }
 
-            Object instance = Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition()-Vector3.up*0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up)*Quaternion.AngleAxis(-90, Vector3.right));
+            
             
         }
 

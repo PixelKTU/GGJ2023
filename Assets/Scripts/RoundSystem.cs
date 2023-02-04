@@ -39,11 +39,25 @@ public class RoundSystem : MonoBehaviour
         return roundDataList[roundNumber - 1];
     }
 
-    IEnumerator testas()
+    /*IEnumerator testas()
     {
 
         yield return new WaitForSeconds(5);
         StartRound();
+    }*/
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (roundStarted)
+            {
+                EndRound();
+            }
+            else
+            {
+                StartRound();
+            }
+        }
     }
 
     void Awake()
@@ -53,7 +67,10 @@ public class RoundSystem : MonoBehaviour
             Instance = this;
         }
 
-        StartCoroutine(testas());
+        //StartCoroutine(testas());
+        
+
+
         roundNumber = 1;
         if (roundStartEvent == null)
         {

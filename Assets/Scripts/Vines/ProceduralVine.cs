@@ -7,7 +7,7 @@ public class ProceduralVine : MonoBehaviour
 {
     public Camera cam;
     public Transform vineOrigin;
-    public Object vineEnding;
+    public Object[] vineEndings;
     Vector3 closestPoint;
     [Space]
     public float recycleInterval = 30;
@@ -125,7 +125,8 @@ public class ProceduralVine : MonoBehaviour
                 BezierKnot knot = new BezierKnot(nodes[j].getPosition());
                 spline.Add(knot);
             }
-            Instantiate(vineEnding,nodes[nodes.Count - 1].getPosition(),Quaternion.identity);
+
+            Instantiate(vineEndings[Random.Range(0, vineEndings.Length - 1)], nodes[nodes.Count - 1].getPosition(),Quaternion.FromToRotation(dir,hit.normal));
         }
 
         vineCount++;

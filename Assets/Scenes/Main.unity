@@ -133,19 +133,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 186.72617
       objectReference: {fileID: 0}
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50.5
       objectReference: {fileID: 0}
     - target: {fileID: 1085256580910787700, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
@@ -257,35 +257,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1085256580910787704, guid: da19ed014999e60458a60e27f40d74d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1085256581464996928, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1085256581464996928, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1085256581464996928, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 56.33333
       objectReference: {fileID: 0}
     - target: {fileID: 1085256581464996928, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50.5
       objectReference: {fileID: 0}
     - target: {fileID: 1085256581893073626, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 260.78564
       objectReference: {fileID: 0}
     - target: {fileID: 1085256581893073626, guid: da19ed014999e60458a60e27f40d74d2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 101
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

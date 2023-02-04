@@ -45,7 +45,14 @@ public class TowerBuilding : Building
     {
         if (reachedByRoots && !onCooldown && isShooting)
         {
-
+            GameObject enem = EnemySpawningSystem.Instance.GetNearestEnemy(transform.position);
+            Vector3 enemPosition = enem.transform.position;
+            if ((enemPosition-transform.position).sqrMagnitude <= towerRange * towerRange)
+            {
+                Shoot(enem);
+                onCooldown = true;
+                StartCoroutine(CooldownWait());
+            }
         }
     }
 }

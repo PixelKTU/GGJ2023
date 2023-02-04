@@ -16,7 +16,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
 
     [Header("Next round button")]
-    [SerializeField] private GameObject nextRoundButtonObj;
+    [SerializeField] private RectTransform nextRoundButtonTransform;
+    [SerializeField] private float nextRoundButtonAnimTime = 0.5f;
+    [SerializeField] private AnimationCurve nextRoundButtonCurve;
 
 
     void Start()
@@ -64,17 +66,40 @@ public class UIManager : MonoBehaviour
         roundsText.text = $"Round {RoundSystem.roundNumber}";
     }
 
+    float timeVal = 0;
+    bool nextRoundButtonClosing;
     private void OnRoundEnded()
     {
-        nextRoundButtonObj.SetActive(true);
+        nextRoundButtonClosing = false;
+        timeVal = 1;
+
         roundsText.text = $"Upcoming Round {RoundSystem.roundNumber}";
     }
 
 
     public void TransitionToNextRound()
     {
-        nextRoundButtonObj.SetActive(false);
-        RoundSystem.StartRound();
+        if (timeVal <= 0)
+        {
+            nextRoundButtonClosing = true;
+            timeVal = 1;
+
+            RoundSystem.StartRound();
+        }
+    }
+
+
+    private void Update()
+    {
+        if (timeVal > 0)
+        {
+            timeVal -= Time.deltaTime * (1/ nextRoundButtonAnimTime);
+            timeVal = Mathf.Max(0, timeVal);
+
+            float val = (nextRoundButtonClosing) ? nextRoundButtonCurve.Evaluate(1 - timeVal) : 1 - nextRoundButtonCurve.Evaluate(1 - timeVal);
+
+            nextRoundButtonTransform.pivot = new Vector2(1, Mathf.Lerp(0, 1.5f, val));
+        }
     }
 
 

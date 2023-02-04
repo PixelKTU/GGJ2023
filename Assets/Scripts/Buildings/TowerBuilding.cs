@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TowerBuilding : Building
 {
     [SerializeField] float towerRange = 3;
     [SerializeField] float towerDamage = 1;
     [SerializeField] float shootingCooldown = 1;
+
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawnPosition;
+
+    [SerializeField] Animator animator;
+    [SerializeField] Transform turret;
 
 
     bool isShooting = false;
@@ -20,7 +25,7 @@ public class TowerBuilding : Building
         if (bulletSpawnPosition != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(bulletSpawnPosition.position, towerRange);
+            Gizmos.DrawWireSphere(bulletSpawnPosition.position, 0.5f);
         }
     }
 
@@ -33,6 +38,12 @@ public class TowerBuilding : Building
 
     void Shoot(GameObject enemy)
     {
+        if (animator != null && turret != null)
+        {
+            animator.SetTrigger("Shoot");
+            //turret.LookAt(enemy.transform);bad model for now
+        }
+
         enemy.GetComponent<Enemy>().TakeImaginaryDamage(towerDamage);
         BulletManager.Instance.SpawnBullet(bulletSpawnPosition.position, enemy, towerDamage);
     }
@@ -49,7 +60,7 @@ public class TowerBuilding : Building
 
     void Update()
     {
-        
+
         if (reachedByRoots && !onCooldown && isShooting)
         {
             GameObject enem = EnemySpawningSystem.Instance.GetNearestAliveEnemy(bulletSpawnPosition.position);

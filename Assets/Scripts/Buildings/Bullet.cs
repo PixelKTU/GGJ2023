@@ -38,7 +38,6 @@ public class Bullet : MonoBehaviour
             dir = (target.transform.position - transform.position) / dist;
         }
         transform.position += dir * step;
-        
     }
 
 }

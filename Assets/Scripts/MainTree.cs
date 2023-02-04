@@ -30,6 +30,16 @@ public class MainTree : MonoBehaviour
         }
     }
 
+    public Transform GetTransform()
+    {
+        return transform;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+
     #region Health
 
     public float GetHealth()

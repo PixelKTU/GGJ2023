@@ -9,19 +9,30 @@ public class Scorpion : Enemy
 
     Camera cam;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         cam = Camera.main;
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Input.GetMouseButtonDown(0))
         {
-            agent.SetDestination(hit.point);
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                agent.SetDestination(hit.point);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            agent.SetDestination(MainTree.Instance.GetPosition());
         }
     }
 }

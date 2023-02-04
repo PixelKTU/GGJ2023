@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public enum EnemyState
 {
@@ -18,14 +20,75 @@ public class Enemy : MonoBehaviour
     public bool dead { get; private set; }
 
 
+    [SerializeField] protected EnemyState state;
+
     [SerializeField] protected float maxHealth;
     [SerializeField] protected EnemyType enemyType;
 
+    [Header("Attacks")]
+    [SerializeField] protected int damage = 1;
+    [SerializeField] protected float attackDistance = 3;
+    [SerializeField] protected float attackCooldown = 1;
+
     [Header("AI")]
+    [SerializeField] protected Animator animator;
     [SerializeField] protected NavMeshAgent agent;
 
 
-    protected EnemyState state;
+
+    private Transform target;
+    private float currentAttackTime;
+
+    protected virtual void Start()
+    {
+        Attack(MainTree.Instance.GetTransform());
+    }
+
+    protected virtual void Update()
+    {
+        if (GameManager.Instance.GameState == GameState.Defeat || GameManager.Instance.GameState == GameState.Won) return;
+
+        switch (state)
+        {
+            case EnemyState.Idle:
+                Attack(MainTree.Instance.GetTransform());
+                break;
+            case EnemyState.Attacking:
+
+                currentAttackTime += Time.deltaTime;
+
+                if (currentAttackTime > attackCooldown)
+                {
+                    if (CanAttack())
+                    {
+                        currentAttackTime = 0;
+                        animator.SetTrigger("Attack");
+                        MainTree.Instance.TakeDamage(damage);
+                    }
+                    else
+                    {
+                        if (target != null)
+                        {
+                            WalkTo(target.position);
+                        }
+                        else
+                        {
+                            Attack(MainTree.Instance.GetTransform());
+                        }
+                    }
+                }
+                break;
+            case EnemyState.Walking:
+                if (CanAttack())
+                {
+                    Attack(MainTree.Instance.GetTransform());
+                }
+                break;
+            case EnemyState.Dying:
+
+                break;
+        }
+    }
 
     public void TakeDamage(float damage)
     {
@@ -43,6 +106,8 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         dead = true;
+
+        state = EnemyState.Dying;
         EnemySpawningSystem.Instance.RemoveEnemy(gameObject, enemyType);
     }
 
@@ -56,6 +121,31 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         imaginaryHealth = maxHealth;
         dead = false;
+        state = EnemyState.Idle;
+        target = null;
+        currentAttackTime = attackCooldown;
+    }
+
+    protected virtual void WalkTo(Vector3 position)
+    {
+        state = EnemyState.Walking;
+        agent.SetDestination(position);
+    }
+
+    protected virtual void Attack(Transform target)
+    {
+        this.target = target;
+        state = EnemyState.Attacking;
+
+        if (!CanAttack())
+        {
+            WalkTo(target.position);
+        }
+    }
+
+    private bool CanAttack()
+    {
+        return Vector3.Distance(target.position, transform.position) < attackDistance;
     }
 
     /// TODO

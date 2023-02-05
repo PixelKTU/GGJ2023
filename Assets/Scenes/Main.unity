@@ -1294,6 +1294,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 2511957387709874053, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: defaultHealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

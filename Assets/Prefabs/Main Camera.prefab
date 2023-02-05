@@ -337,7 +337,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -370,6 +370,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveSpeed: 15
   scrollSpeed: 1500
-  minCoordinates: {x: -80, y: 12, z: -80}
+  minCoordinates: {x: -99.7, y: 13.5, z: -99.8}
   maxCoordinates: {x: 80, y: 30, z: 80}
   defaultRotation: {x: 45, y: 45, z: 0}

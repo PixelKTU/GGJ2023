@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Splines;
 
 public class ProceduralVine : MonoBehaviour
@@ -19,7 +20,11 @@ public class ProceduralVine : MonoBehaviour
     public float branchRadiusPerSegment = 0.02f;
     public float minbranchRadius = 0.02f;
     [Space]
+    public float vineDamage = 1f;
+    [Space]
     public Material branchMaterial;
+    [Space]
+    public EventSystem eventSystem;
     LineRenderer lRender;
     float yOffsetWeight;
 
@@ -42,28 +47,39 @@ public class ProceduralVine : MonoBehaviour
         spline.Add(knot);
         lRender = GetComponent<LineRenderer>();
         lm = (1 << buildingLayer);
+
+        RoundSystem.roundStartEvent.AddListener(OnRoundStarted);
+        RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
+    }
+
+    private void OnDestroy()
+    {
+        RoundSystem.roundStartEvent.RemoveListener(OnRoundStarted);
+        RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
     }
 
     private void FixedUpdate()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100))
+        if (GameManager.Instance.GameState == GameState.WaitingForRound)
         {
-            minDistance = float.MaxValue;
-            foreach (BezierKnot knots in spline)
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100))
             {
-                if (minDistance > Vector3.Distance(knots.Position, hit.point))
+                minDistance = float.MaxValue;
+                foreach (BezierKnot knots in spline)
                 {
-                    minDistance = Vector3.Distance(new Vector3(knots.Position.x, knots.Position.y, knots.Position.z), hit.point);// + transform.position, hit.point);
-                    closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);// + transform.position;
+                    if (minDistance > Vector3.Distance(knots.Position, hit.point))
+                    {
+                        minDistance = Vector3.Distance(new Vector3(knots.Position.x, knots.Position.y, knots.Position.z), hit.point);// + transform.position, hit.point);
+                        closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);// + transform.position;
+                    }
                 }
+                segmentLength = minDistance / maxPointsForBranch;
+                lRender.SetPosition(0, closestPoint);
+                lRender.SetPosition(1, closestPoint + (hit.point - closestPoint).normalized * minDistance);
             }
-            segmentLength = minDistance / maxPointsForBranch;
-            lRender.SetPosition(0, closestPoint);
-            lRender.SetPosition(1, closestPoint+(hit.point - closestPoint).normalized  * minDistance);
         }
-        
     }
 
     void Update()
@@ -74,12 +90,12 @@ public class ProceduralVine : MonoBehaviour
         //    // call this method when you are ready to group your meshes
         //    //combineAndClear();
         //}
-        if(instantiateRootends)
+        if (instantiateRootends)
         {
-            if(Time.time - instantiateTimeStart > 2)
+            if (Time.time - instantiateTimeStart > 2)
             {
                 instantiateRootends = false;
-                foreach(Vector3 pos in instantiatePositions)
+                foreach (Vector3 pos in instantiatePositions)
                 {
                     Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], pos - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
                 }
@@ -89,22 +105,34 @@ public class ProceduralVine : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
+            if (GameManager.Instance.GameState == GameState.WaitingForRound && !eventSystem.IsPointerOverGameObject())
             {
-                building = null;
-                RaycastHit hitsphere;
-                if(Physics.SphereCast(ray,2f,out hitsphere,100f,lm))
-                {
-                    building = hitsphere.collider.gameObject;
-                }
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-                createVine(hit);
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    building = null;
+                    RaycastHit hitsphere;
+                    if (Physics.SphereCast(ray, 2f, out hitsphere, 100f, lm))
+                    {
+                        building = hitsphere.collider.gameObject;
+                    }
+
+                    createVine(hit);
+                }
             }
         }
+    }
+
+    private void OnRoundStarted()
+    {
+        lRender.enabled = false;
+    }
+
+    private void OnRoundEnded()
+    {
+        lRender.enabled = true;
     }
 
     Vector3 findTangentFromArbitraryNormal(Vector3 normal)
@@ -125,7 +153,7 @@ public class ProceduralVine : MonoBehaviour
         minDistance = float.MaxValue;
         foreach (BezierKnot knots in spline)
         {
-            if(minDistance > Vector3.Distance(knots.Position, hit.point))
+            if (minDistance > Vector3.Distance(knots.Position, hit.point))
             {
                 minDistance = Vector3.Distance(new Vector3(knots.Position.x, knots.Position.y, knots.Position.z), hit.point);
                 closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);
@@ -140,7 +168,7 @@ public class ProceduralVine : MonoBehaviour
             minDistance = Vector3.Distance(closestPoint, hit.point);
             //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
             segmentLength = minDistance / maxPointsForBranch;
-            Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - closestPoint, Vector3.up) -90 + Random.Range(0,15/branches*i*1/maxPointsForBranch*10), Vector3.up) * tangent;
+            Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - closestPoint, Vector3.up) - 90 + Random.Range(0, 15 / branches * i * 1 / maxPointsForBranch * 10), Vector3.up) * tangent;
 
             List<Vine> nodes = createBranch(maxPointsForBranch, closestPoint, Vector3.up, dir, i);
             GameObject branch = new GameObject("Branch " + i);
@@ -150,27 +178,19 @@ public class ProceduralVine : MonoBehaviour
 
             branch.transform.SetParent(Vine.transform);
 
-            int pointOffset = nodes.Count - maxPointsForBranch; 
+            int pointOffset = nodes.Count - maxPointsForBranch;
 
-            for(int j= pointOffset+1; j< pointOffset + maxPointsForBranch; j++)
+            for (int j = pointOffset + 1; j < pointOffset + maxPointsForBranch; j++)
             {
                 BezierKnot knot = new BezierKnot(nodes[j].getPosition());
                 spline.Add(knot);
             }
 
-            if (building !=null)
-            if(Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+            if (building != null)
             {
-
-                ResourceBuilding resourceBuilding;
-                TowerBuilding towerBuilding;
-                if(building.TryGetComponent<ResourceBuilding>(out resourceBuilding))
+                if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
                 {
-                    resourceBuilding.EnableBuilding();
-                }
-                else if(building.TryGetComponent<TowerBuilding>(out towerBuilding))
-                {
-                    towerBuilding.EnableBuilding();
+                    CheckIfReachedBuildings(building);
                 }
             }
             Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
@@ -204,26 +224,18 @@ public class ProceduralVine : MonoBehaviour
                     }
 
                     if (building != null)
-
-
+                    {
                         if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
                         {
-                            ResourceBuilding resourceBuilding;
-                            TowerBuilding towerBuilding;
-                            if (building.TryGetComponent<ResourceBuilding>(out resourceBuilding))
-                            {
-                                resourceBuilding.EnableBuilding();
-                            }
-                            else if (building.TryGetComponent<TowerBuilding>(out towerBuilding))
-                            {
-                                towerBuilding.EnableBuilding();
-                            }
+                            CheckIfReachedBuildings(building);
                         }
+                    }
+
                     instantiatePositions.Add(nodes[nodes.Count - 1].getPosition());
                 }
                 instantiateRootends = true;
                 instantiateTimeStart = Time.time;
-                
+
 
 
             }
@@ -232,6 +244,22 @@ public class ProceduralVine : MonoBehaviour
 
 
         vineCount++;
+    }
+
+    void CheckIfReachedBuildings(GameObject objectToCheck)
+    {
+        Building building;
+        EnemyBase enemyBase;
+
+        if (objectToCheck.TryGetComponent<Building>(out building))
+        {
+            building.EnableBuilding();
+        }
+
+        if (objectToCheck.TryGetComponent<EnemyBase>(out enemyBase))
+        {
+            enemyBase.TakeDamage(vineDamage);
+        }
     }
 
     Vector3 calculateTangent(Vector3 p0, Vector3 p1, Vector3 normal)
@@ -293,7 +321,7 @@ public class ProceduralVine : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, segmentLength, layermask))
             {
-                p1 = hit.point+new Vector3(0,Random.Range(0, yOffsetWeight),0);
+                p1 = hit.point + new Vector3(0, Random.Range(0, yOffsetWeight), 0);
             }
             ray = new Ray(p1, dir);
 
@@ -346,10 +374,10 @@ public class ProceduralVine : MonoBehaviour
                             Vine m0Node = new Vine(m0, normal);
                             Vine m1Node = new Vine(m1, normal);
 
-                            return new List<Vine> { m0Node, m1Node, p4Node }.join(createBranch(count - 3, p4, normal, dir,i));
+                            return new List<Vine> { m0Node, m1Node, p4Node }.join(createBranch(count - 3, p4, normal, dir, i));
                         }
 
-                        return new List<Vine> { p4Node }.join(createBranch(count - 1, p4, normal, dir,i));
+                        return new List<Vine> { p4Node }.join(createBranch(count - 1, p4, normal, dir, i));
                     }
                     else
                     {
@@ -366,9 +394,9 @@ public class ProceduralVine : MonoBehaviour
                             Vine m0Node = new Vine(m0, dir);
                             Vine m1Node = new Vine(m1, dir);
 
-                            return new List<Vine> { m0Node, m1Node, p4Node }.join(createBranch(count - 3, p4, dir, -normal,i));
+                            return new List<Vine> { m0Node, m1Node, p4Node }.join(createBranch(count - 3, p4, dir, -normal, i));
                         }
-                        return new List<Vine> { p4Node }.join(createBranch(count - 1, p4, dir, -normal,i));
+                        return new List<Vine> { p4Node }.join(createBranch(count - 1, p4, dir, -normal, i));
                     }
                 }
             }

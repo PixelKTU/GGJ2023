@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 758250611407564720}
   - component: {fileID: 3409746256518062140}
   - component: {fileID: 1816122555985587118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fabrikas1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

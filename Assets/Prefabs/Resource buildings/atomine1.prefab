@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 600730579452566819}
   - component: {fileID: 7060943126353577339}
   - component: {fileID: 1054015413018018171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: atomine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

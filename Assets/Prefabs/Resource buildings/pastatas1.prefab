@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8556679990452190800}
   - component: {fileID: 5156553302604881173}
   - component: {fileID: 3852134371735712359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pastatas1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

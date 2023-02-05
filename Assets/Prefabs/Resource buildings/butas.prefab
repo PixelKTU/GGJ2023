@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6087671158301375153}
   - component: {fileID: 1363469896084685982}
   - component: {fileID: 5817327605021699481}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: butas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

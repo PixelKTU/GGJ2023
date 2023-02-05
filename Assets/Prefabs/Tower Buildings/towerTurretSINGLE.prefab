@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5626364592066824148}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4994865299117103667}
   - component: {fileID: 4994865299117103666}
   - component: {fileID: 4994865299117103665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: towerTurretSINGLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5301705861918324812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet spawn position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8686795326689013601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6886367466861973775}
   - component: {fileID: 5730288773005092844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "bok\u0161tas"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9034385673753519325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5435123651861428172}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rig_Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4782043884722461238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

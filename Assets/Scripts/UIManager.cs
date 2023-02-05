@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text incomeText;
     [SerializeField] private TMP_Text roundsText;
 
+    [SerializeField] private List<GameObject> UIToHide;
+
     [Header("UI Screens")]
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
@@ -20,6 +22,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float nextRoundButtonAnimTime = 0.5f;
     [SerializeField] private AnimationCurve nextRoundButtonCurve;
 
+    private float timeVal = 0;
+    private bool nextRoundButtonClosing;
 
     void Start()
     {
@@ -34,6 +38,18 @@ public class UIManager : MonoBehaviour
         SetInitialText();
     }
 
+    private void Update()
+    {
+        if (timeVal > 0)
+        {
+            timeVal -= Time.deltaTime * (1 / nextRoundButtonAnimTime);
+            timeVal = Mathf.Max(0, timeVal);
+
+            float val = (nextRoundButtonClosing) ? nextRoundButtonCurve.Evaluate(1 - timeVal) : 1 - nextRoundButtonCurve.Evaluate(1 - timeVal);
+
+            nextRoundButtonTransform.pivot = new Vector2(1, Mathf.Lerp(0, 1.5f, val));
+        }
+    }
 
     private void OnDestroy()
     {
@@ -66,8 +82,7 @@ public class UIManager : MonoBehaviour
         roundsText.text = $"Round {RoundSystem.roundNumber}";
     }
 
-    float timeVal = 0;
-    bool nextRoundButtonClosing;
+
     private void OnRoundEnded()
     {
         nextRoundButtonClosing = false;
@@ -88,31 +103,29 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
-    private void Update()
-    {
-        if (timeVal > 0)
-        {
-            timeVal -= Time.deltaTime * (1/ nextRoundButtonAnimTime);
-            timeVal = Mathf.Max(0, timeVal);
-
-            float val = (nextRoundButtonClosing) ? nextRoundButtonCurve.Evaluate(1 - timeVal) : 1 - nextRoundButtonCurve.Evaluate(1 - timeVal);
-
-            nextRoundButtonTransform.pivot = new Vector2(1, Mathf.Lerp(0, 1.5f, val));
-        }
-    }
-
-
     private void OnGameStateChange(GameState gameState)
     {
         switch (gameState)
         {
             case GameState.Defeat:
+                ShowUI(false);
                 loseScreen.SetActive(true);
                 break;
             case GameState.Won:
+                ShowUI(false);
                 winScreen.SetActive(true);
                 break;
+        }
+    }
+
+    public void ShowUI(bool show = true)
+    {
+        for (int i = 0; i < UIToHide.Count; i++)
+        {
+            if (UIToHide[i] != null)
+            {
+                UIToHide[i].SetActive(show);
+            }
         }
     }
 

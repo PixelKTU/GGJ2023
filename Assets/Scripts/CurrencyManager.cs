@@ -28,9 +28,21 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        RoundSystem.roundStartEvent.AddListener(OnRoundStarted);
+        RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
+    }
+
+    private void OnDestroy()
+    {
+        RoundSystem.roundStartEvent.RemoveListener(OnRoundStarted);
+        RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadPlus))
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             AddRoots(1);
             AddIncome(1);
@@ -42,6 +54,17 @@ public class CurrencyManager : MonoBehaviour
             AddIncome(-1);
         }
     }
+
+    private void OnRoundStarted()
+    {
+
+    }
+
+    private void OnRoundEnded()
+    {
+        AddRoots(currentIncome);
+    }
+
 
     /// <summary>
     /// Can be used to add or remove roots from the player

@@ -27222,8 +27222,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8368996837503985400, guid: 96639d1ceea0e6e43833bff5dc246256,
         type: 3}
+      propertyPath: minCoordinates.x
+      value: -99.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368996837503985400, guid: 96639d1ceea0e6e43833bff5dc246256,
+        type: 3}
       propertyPath: minCoordinates.y
-      value: 12.5
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368996837503985400, guid: 96639d1ceea0e6e43833bff5dc246256,
+        type: 3}
+      propertyPath: minCoordinates.z
+      value: -99.8
       objectReference: {fileID: 0}
     - target: {fileID: 8368996837503985400, guid: 96639d1ceea0e6e43833bff5dc246256,
         type: 3}

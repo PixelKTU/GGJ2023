@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -328,6 +333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -415,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -780,6 +795,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -916,6 +936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1107,6 +1132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1232,6 +1262,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 5669855484928399243, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: towerRange
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669855484928399243, guid: c865bdc32d143034b8dc57edf7a5176b,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1309,6 +1349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1397,6 +1442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1500,6 +1550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1611,6 +1666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1728,6 +1788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1815,6 +1880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1904,6 +1974,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1992,6 +2067,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2019,6 +2099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerTurretSINGLE (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -2167,6 +2252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2351,6 +2441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2438,6 +2533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2561,6 +2661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2661,6 +2766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2750,6 +2860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2860,6 +2975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3031,6 +3151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3156,6 +3281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3287,6 +3417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3415,6 +3550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3517,6 +3657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3649,6 +3794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3765,6 +3915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3867,6 +4022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3999,6 +4159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4129,6 +4294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4277,6 +4447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9212,6 +9387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9343,6 +9523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9459,6 +9644,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9546,6 +9736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kelias4 (short)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75da5cd60e64eee4b96b612e4a3de97e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9684,6 +9879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9800,6 +10000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9893,6 +10098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9996,6 +10206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10113,6 +10328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10215,6 +10435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10332,6 +10557,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10434,6 +10664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10551,6 +10786,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kelias3 (short) (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10666,6 +10906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10753,6 +10998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kelias3 (short) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10958,6 +11208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11073,6 +11328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kelias3 (short) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11187,6 +11447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16105,6 +16370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16273,6 +16543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kelias3 (short) (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16402,6 +16677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16540,6 +16820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16656,6 +16941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16743,6 +17033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16858,6 +17153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17026,6 +17326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17113,6 +17418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17368,6 +17678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17498,6 +17813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock3 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17670,6 +17990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17791,6 +18116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17916,6 +18246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18043,6 +18378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18145,6 +18485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18262,6 +18607,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18349,6 +18699,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18452,6 +18807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18611,6 +18971,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18776,6 +19141,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18898,6 +19268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19008,6 +19383,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19110,6 +19490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19255,6 +19640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19380,6 +19770,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19495,6 +19890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19621,6 +20021,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19736,6 +20141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19861,6 +20271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19997,6 +20412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20141,6 +20561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20301,6 +20726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20432,6 +20862,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20548,6 +20983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20657,6 +21097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20782,6 +21227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20927,6 +21377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21052,6 +21507,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21174,6 +21634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21283,6 +21748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21415,6 +21885,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21476,6 +21951,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerTurretSINGLE (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -21633,6 +22118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21764,6 +22254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock3 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21880,6 +22375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21989,6 +22489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22218,6 +22723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22414,6 +22924,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22608,6 +23123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22717,6 +23237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22833,6 +23358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22972,6 +23502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23074,6 +23609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23246,6 +23786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23577,6 +24122,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock3 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23708,6 +24258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23823,6 +24378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23949,6 +24509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24070,6 +24635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24204,6 +24774,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b2d7e7cbb7838547b22d78107bba535,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24334,6 +24909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24466,6 +25046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24581,6 +25166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24700,6 +25290,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24830,6 +25425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock3 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24962,6 +25562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25077,6 +25682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kelias3 (short) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25210,11 +25820,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5968224777494994804, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
-        type: 3}
-      propertyPath: roundDataList.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7047763477253463848, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
         type: 3}
@@ -25355,6 +25960,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25480,6 +26090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25595,6 +26210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25716,6 +26336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8daab0a7cf8722649bfb60c017af7aed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25764,6 +26389,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerTurretSINGLE (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -25913,6 +26548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26029,6 +26669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26138,6 +26783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kelias3 (short)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbe1f64e69483e49aa523264fe2e6c2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26254,6 +26904,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26363,6 +27018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26497,6 +27157,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26608,6 +27273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock5 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26665,7 +27335,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1845706757
 Transform:
@@ -26895,6 +27565,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4acb45253a0c4384ca13440e835e3563,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27019,6 +27694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27148,6 +27828,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerTurretSINGLE (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -27292,6 +27982,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ebf93185043849641bc173f3f0be8709,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27418,6 +28113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27522,6 +28222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27737,6 +28442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429f39633b0767741bd3407f433074c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28021,6 +28731,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreck_Car (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28145,6 +28860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28332,6 +29052,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28463,6 +29188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock3 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4698e8e336f56e94693f538347fd8d27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28593,6 +29323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rock1 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d334c7dd38d6b345bc25a01ca7a064a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28747,6 +29482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wreck_Car (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e7d0ba71fcfd324499a1ba618459749,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

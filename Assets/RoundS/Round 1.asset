@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45b483ba6809494393134aaae33feaf, type: 3}
   m_Name: Round 1
   m_EditorClassIdentifier: 
-  enemyCount: 10
+  enemyCount: 5

@@ -28,7 +28,7 @@ public class ResourceBuilding : Building
         if (reachedByRoots)
         {
             base.OnRoundEnded();
-            CurrencyManager.Instance.AddRoots(buildingIncome);
+            //CurrencyManager.Instance.AddRoots(buildingIncome);is done from currency manager
         }
     }
 }

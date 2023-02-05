@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1289824396099925176}
   - component: {fileID: 6755638594518974627}
   - component: {fileID: 6193023975925981053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: atomine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

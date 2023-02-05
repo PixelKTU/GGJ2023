@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 126807005489561815}
   - component: {fileID: 7693254533536477445}
   - component: {fileID: 4890866763508794364}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ligonine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

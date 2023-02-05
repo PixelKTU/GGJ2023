@@ -13,7 +13,7 @@ public class EnemyBase : MonoBehaviour
 
     private float currentHealth;
 
-    void Start()
+    void Awake()
     {
         if (Instance == null)
         {

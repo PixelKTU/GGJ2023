@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
     [SerializeField] private TMP_Text rootsText;
     [SerializeField] private TMP_Text incomeText;
     [SerializeField] private TMP_Text roundsText;
 
     [SerializeField] private List<GameObject> UIToHide;
+
+    [Header("Health bars")]
+    [SerializeField] private Image enemyBaseBar;
+    [SerializeField] private Image playerTreeBar;
 
     [Header("UI Screens")]
     [SerializeField] private GameObject winScreen;
@@ -32,6 +36,9 @@ public class UIManager : MonoBehaviour
         RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
         CurrencyManager.Instance.OnCurrencyUpdated += OnCurrencyUpdated;
         CurrencyManager.Instance.OnIncomeUpdated += OnIncomeUpdated;
+
+        MainTree.Instance.OnTakeDamage += OnPlayerTakeDamage;
+        EnemyBase.Instance.OnTakeDamage += OnEnemyBaseTakeDamage;
 
         loseScreen.SetActive(false);
         winScreen.SetActive(false);
@@ -58,6 +65,8 @@ public class UIManager : MonoBehaviour
         RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
         CurrencyManager.Instance.OnCurrencyUpdated -= OnCurrencyUpdated;
         CurrencyManager.Instance.OnIncomeUpdated -= OnIncomeUpdated;
+        MainTree.Instance.OnTakeDamage -= OnPlayerTakeDamage;
+        EnemyBase.Instance.OnTakeDamage -= OnEnemyBaseTakeDamage;
     }
 
     private void SetInitialText()
@@ -65,6 +74,20 @@ public class UIManager : MonoBehaviour
         rootsText.text = CurrencyManager.Instance.GetRoots().ToString();
         incomeText.text = $"+{CurrencyManager.Instance.GetCurrentIncome()}";
         roundsText.text = $"Upcoming Round {RoundSystem.roundNumber}";
+        playerTreeBar.fillAmount = 1;
+        enemyBaseBar.fillAmount = 1;
+    }
+
+    #region Events
+
+    private void OnPlayerTakeDamage(float health, float damageTaken)
+    {
+        playerTreeBar.fillAmount = health / MainTree.Instance.GetDefaultHealth();
+    }
+
+    private void OnEnemyBaseTakeDamage(float health, float damageTaken)
+    {
+        enemyBaseBar.fillAmount = health / EnemyBase.Instance.GetDefaultHealth();
     }
 
     private void OnCurrencyUpdated(int currencyCount)
@@ -81,26 +104,12 @@ public class UIManager : MonoBehaviour
     {
         roundsText.text = $"Round {RoundSystem.roundNumber}";
     }
-
-
     private void OnRoundEnded()
     {
         nextRoundButtonClosing = false;
         timeVal = 1;
 
         roundsText.text = $"Upcoming Round {RoundSystem.roundNumber}";
-    }
-
-
-    public void TransitionToNextRound()
-    {
-        if (timeVal <= 0)
-        {
-            nextRoundButtonClosing = true;
-            timeVal = 1;
-
-            RoundSystem.StartRound();
-        }
     }
 
     private void OnGameStateChange(GameState gameState)
@@ -115,6 +124,19 @@ public class UIManager : MonoBehaviour
                 ShowUI(false);
                 winScreen.SetActive(true);
                 break;
+        }
+    }
+
+    #endregion
+
+    public void TransitionToNextRound()
+    {
+        if (timeVal <= 0)
+        {
+            nextRoundButtonClosing = true;
+            timeVal = 1;
+
+            RoundSystem.StartRound();
         }
     }
 

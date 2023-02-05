@@ -39,18 +39,19 @@ public class ResourceUI : MonoBehaviour
             {
                 image.sprite = sprite;
                 TMP.text = "+" + resourceBuilding.GetBuildingIncome();
+                TMP.fontSize = 3;
             }
             else
             {
                 if(!onece)
                 {
                     Destroy(image);
-                    TMP.rectTransform.localPosition = new Vector3(0,TMP.rectTransform.localPosition.y +TMP.fontSize, 0);
+                    TMP.rectTransform.localPosition = new Vector3(0,TMP.rectTransform.localPosition.y +TMP.fontSize/2, 0);
                     onece = true;
-                    TMP.fontSize = 3;
-                    TMP.alignment = TextAlignmentOptions.Center;
+                    TMP.fontSize = 1;
+                    TMP.alignment = TextAlignmentOptions.BottomGeoAligned;
                 }
-                TMP.text = "Damage: " + towerBuilding.GetTowerDamage() + "\nRange: " + towerBuilding.GetTowerRange() + "\nCooldown: " + towerBuilding.GetShootingCooldown();
+                TMP.text = "Damage: " + towerBuilding.GetTowerDamage();
             }
         }
     }

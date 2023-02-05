@@ -3,13 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    private AudioSource audioSourceOneShot;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceOneShot;
 
     private void Awake()
     {
@@ -25,31 +27,44 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public void PlaySound(AudioClip clip, Vector3 position, bool isLooping = false)
+    public AudioSource PlaySound(AudioClip[] clip, Vector3 position, bool isLooping = false, float volume = 1)
     {
-        GameObject soundObject = new GameObject("SoundObject");
-        soundObject.transform.position = position;
-        AudioSource audio = soundObject.AddComponent<AudioSource>();
-        audio.loop = isLooping;
-        audio.clip = clip;
-        audio.spatialBlend = 1f;
-        audio.dopplerLevel = 0f;
-        audio.Play();
-        if (!isLooping) Destroy(soundObject, clip.length);
+        return PlaySound(clip[Random.Range(0, clip.Length)], position, isLooping, volume);
     }
 
-    public void PlaySound(AudioClip clip, Transform attachedTransform, bool isLooping = false)
+    public AudioSource PlaySound(AudioClip clip, Vector3 position, bool isLooping = false, float volume = 1)
     {
-        GameObject soundObject = new GameObject("SoundObject");
-        soundObject.transform.parent = attachedTransform;
-        soundObject.transform.position = attachedTransform.position;
-        AudioSource audio = soundObject.AddComponent<AudioSource>();
+        AudioSource audio = Instantiate(audioSource, position, Quaternion.identity);
+        audio.name = "SoundObject";
         audio.loop = isLooping;
         audio.clip = clip;
         audio.spatialBlend = 1f;
         audio.dopplerLevel = 0f;
+        audio.volume = volume;
         audio.Play();
-        if (!isLooping) Destroy(soundObject, clip.length);
+        if (!isLooping) Destroy(audio.gameObject, clip.length);
+
+        return audio;
+    }
+
+    public AudioSource PlaySound(AudioClip[] clip, Transform attachedTransform, bool isLooping = false, float volume = 1)
+    {
+        return PlaySound(clip[Random.Range(0, clip.Length)], attachedTransform, isLooping, volume);
+    }
+
+    public AudioSource PlaySound(AudioClip clip, Transform attachedTransform, bool isLooping = false, float volume = 1)
+    {
+        AudioSource audio = Instantiate(audioSource, attachedTransform);
+        audio.name = "SoundObject";
+        audio.loop = isLooping;
+        audio.clip = clip;
+        audio.spatialBlend = 1f;
+        audio.dopplerLevel = 0f;
+        audio.volume = volume;
+        audio.Play();
+        if (!isLooping) Destroy(audio.gameObject, clip.length);
+
+        return audio;
     }
 
     public void PlaySoundOneShot(AudioClip clip)

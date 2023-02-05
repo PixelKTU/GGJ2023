@@ -27,6 +27,7 @@ public class ProceduralVine : MonoBehaviour
     public Material branchMaterial;
     [Space]
     public EventSystem eventSystem;
+    public AudioClip growSound;
     LineRenderer lRender;
     float yOffsetWeight;
 
@@ -83,7 +84,7 @@ public class ProceduralVine : MonoBehaviour
 
             segmentLength = minDistance / maxPointsForBranch;
             lRender.SetPosition(0, closestPoint);
-            lRender.SetPosition(1, (closestPoint+(hit.point - closestPoint).normalized  * Mathf.Clamp(minDistance,0,maxdistance)));
+            lRender.SetPosition(1, (closestPoint + (hit.point - closestPoint).normalized * Mathf.Clamp(minDistance, 0, maxdistance)));
 
         }
     }
@@ -184,6 +185,11 @@ public class ProceduralVine : MonoBehaviour
 
             CurrencyManager.Instance.AddRoots(-Mathf.CeilToInt(minDistance / maxsegment));
 
+            if (growSound != null)
+            {
+                SoundManager.Instance.PlaySound(growSound, targetPoint);
+            }
+
             Vector3 tangent = findTangentFromArbitraryNormal(Vector3.up);
             GameObject Vine = new GameObject("Vine " + vineCount);
             Vine.transform.SetParent(transform);
@@ -213,7 +219,7 @@ public class ProceduralVine : MonoBehaviour
 
                 if (building != null)
                 {
-                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << buildingLayer)).Length > 0)
                     {
                         CheckIfReachedBuildings(building);
                     }
@@ -250,7 +256,7 @@ public class ProceduralVine : MonoBehaviour
 
                         if (building != null)
                         {
-                            if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                            if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm).Length > 0)
                             {
                                 CheckIfReachedBuildings(building);
                             }

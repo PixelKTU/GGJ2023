@@ -15,9 +15,24 @@ public class TowerBuilding : Building
     [SerializeField] Animator animator;
     [SerializeField] Transform turret;
 
+    [SerializeField] AudioClip shootAudioClip;
+
 
     bool isShooting = false;
     bool onCooldown = false;
+
+    public float GetTowerRange()
+    {
+        return towerRange;
+    }
+    public float GetTowerDamage()
+    {
+        return towerDamage;
+    }
+    public float GetShootingCooldown()
+    {
+        return shootingCooldown;
+    }
 
 
     private void OnDrawGizmosSelected()
@@ -28,7 +43,6 @@ public class TowerBuilding : Building
             Gizmos.DrawWireSphere(bulletSpawnPosition.position, towerRange);
         }
     }
-
 
     IEnumerator CooldownWait()
     {
@@ -42,6 +56,11 @@ public class TowerBuilding : Building
         {
             animator.SetTrigger("Shoot");
             //turret.LookAt(enemy.transform);bad model for now
+        }
+
+        if (shootAudioClip != null)
+        {
+            SoundManager.Instance.PlaySound(shootAudioClip, transform.position);
         }
 
         enemy.GetComponent<Enemy>().TakeImaginaryDamage(towerDamage);

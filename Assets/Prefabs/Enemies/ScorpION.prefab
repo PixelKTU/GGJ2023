@@ -298,6 +298,11 @@ MonoBehaviour:
   attackCooldown: 1
   animator: {fileID: 9150982055181775213}
   agent: {fileID: 1227420658548042511}
+  walkingSounds:
+  - {fileID: 8300000, guid: 0105183b61a11bc4091d75650ed4424a, type: 3}
+  - {fileID: 8300000, guid: 0ad39526f39cc424bb04bfdf5196da28, type: 3}
+  attackSound: {fileID: 8300000, guid: 5b4f18961fa09814ebd5335a47d6c046, type: 3}
+  walkAudioCooldownTime: 0.5
 --- !u!195 &1227420658548042511
 NavMeshAgent:
   m_ObjectHideFlags: 0

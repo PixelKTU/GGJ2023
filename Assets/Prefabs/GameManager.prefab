@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e861dfab92f0744084822967d29deab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testSound: {fileID: 8300000, guid: 1c3332f922edb65459202c2a38beb175, type: 3}
-  testLoopSound: {fileID: 8300000, guid: 7e0ad3b4ec548fb428c0837483bad2a5, type: 3}
+  mainMusic: {fileID: 8300000, guid: cf8a874a12e765e47bf85edac955aedb, type: 3}
 --- !u!114 &968813399646722651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e698d98abcd636240a99d354fd43170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1132614487589763002, guid: 7dcd81080b0205e458f0a358b8f04f96,
+    type: 3}
 --- !u!114 &9172990866579948605
 MonoBehaviour:
   m_ObjectHideFlags: 0

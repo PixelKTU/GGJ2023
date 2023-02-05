@@ -33,9 +33,8 @@ public class GameManager : MonoBehaviour
     }
     private GameState gameState;
 
-    [Header("Test")]
-    [SerializeField] private AudioClip testSound;
-    [SerializeField] private AudioClip testLoopSound;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip mainMusic;
 
     private float health;
 
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
         CurrencyManager.Instance.AddRoots(5);
         CurrencyManager.Instance.AddIncome(1);
 
-        //SoundManager.Instance.PlaySound(testLoopSound, Camera.main.transform, true);
+        SoundManager.Instance.PlaySound(mainMusic, Camera.main.transform, true, 0.01f);
     }
 
 
@@ -70,19 +69,6 @@ public class GameManager : MonoBehaviour
     {
         RoundSystem.roundStartEvent.RemoveListener(OnRoundStarted);
         RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SoundManager.Instance.PlaySoundOneShot(testSound);
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SoundManager.Instance.PlaySound(testSound, Vector3.zero);
-        }
     }
 
     public void EndGame(bool didWin)

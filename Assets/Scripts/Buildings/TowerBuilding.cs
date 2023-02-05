@@ -19,6 +19,19 @@ public class TowerBuilding : Building
     bool isShooting = false;
     bool onCooldown = false;
 
+    public float GetTowerRange()
+    {
+        return towerRange;
+    }
+    public float GetTowerDamage()
+    {
+        return towerDamage;
+    }
+    public float GetShootingCooldown()
+    {
+        return shootingCooldown;
+    }
+
 
     private void OnDrawGizmosSelected()
     {

@@ -271,7 +271,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 354c629bfddf4024f85493af62354452, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -294,7 +294,7 @@ MonoBehaviour:
   maxHealth: 5
   enemyType: 0
   damage: 1
-  attackDistance: 4
+  attackDistance: 5
   attackCooldown: 1
   animator: {fileID: 9150982055181775213}
   agent: {fileID: 1227420658548042511}
@@ -305,10 +305,10 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2545991509532537261}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: -1372625422
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 10.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

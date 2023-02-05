@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  maxHealth: 10
+  maxHealth: 5
   enemyType: 0
   damage: 1
   attackDistance: 4

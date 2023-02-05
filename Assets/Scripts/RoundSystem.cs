@@ -45,20 +45,6 @@ public class RoundSystem : MonoBehaviour
         yield return new WaitForSeconds(5);
         StartRound();
     }*/
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (roundStarted)
-            {
-                EndRound();
-            }
-            else
-            {
-                StartRound();
-            }
-        }
-    }
 
     void Awake()
     {

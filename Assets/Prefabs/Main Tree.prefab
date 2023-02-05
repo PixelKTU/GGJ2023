@@ -76,12 +76,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17a20ccb2c8dac4a8d933c3db273157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerRange: 15
+  towerRange: 22
   towerDamage: 2
   shootingCooldown: 0.5
   bulletPrefab: {fileID: 9218508020589602165, guid: d5e940c85f12a91429f7e65844cc1f2e,
     type: 3}
   bulletSpawnPosition: {fileID: 5348169456395530082}
+  animator: {fileID: 0}
+  turret: {fileID: 0}
+  shootAudioClip: {fileID: 8300000, guid: 1f0ed05e86fa78c43bf4ba2b835d5b99, type: 3}
 --- !u!1 &2169131041841372714
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +154,7 @@ Transform:
   - {fileID: 722266080}
   - {fileID: 4923198956803505123}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2511957387709874054
 CapsuleCollider:
@@ -257,7 +260,12 @@ MonoBehaviour:
   maxSegmentRadius: 2
   branchRadiusPerSegment: 0.005
   minbranchRadius: 0.025
+  maxdistance: 10
+  maxsegment: 8
+  vineDamage: 1
   branchMaterial: {fileID: 2100000, guid: 33605ef882fe9224184003e658db7787, type: 2}
+  eventSystem: {fileID: 0}
+  growSound: {fileID: 8300000, guid: 5abb4610ed2d2d746bb14f47fbbb0468, type: 3}
   spline:
     m_EditModeType: 1
     m_Knots: []

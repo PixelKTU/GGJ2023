@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Pool;
 
 
@@ -91,6 +92,7 @@ public class EnemySpawningSystem : MonoBehaviour
             GameObject obj = enemyPool[(int)type].Get();
             obj.transform.position = position;
             aliveEnemies.Add(obj);
+            obj.GetComponent<NavMeshAgent>().enabled = true;
         }
         enemiesLeft += count;
     }
@@ -98,6 +100,7 @@ public class EnemySpawningSystem : MonoBehaviour
 
     public void RemoveEnemy(GameObject obj, EnemyType type = 0)
     {
+        obj.GetComponent<NavMeshAgent>().enabled = false;//fix bugs with this
         enemyPool[(int)type].Release(obj);
         aliveEnemies.Remove(obj);
         enemiesLeft--;

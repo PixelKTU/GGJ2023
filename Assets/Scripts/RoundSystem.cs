@@ -32,11 +32,11 @@ public class RoundSystem : MonoBehaviour
         }
     }
 
-    
+
     public RoundData GetThisRoundData()
     {
-       // Debug.Log(roundNumber - 1);
-        return roundDataList[roundNumber - 1];
+        // Debug.Log(roundNumber - 1);
+        return roundDataList[Mathf.Min(roundNumber - 1, roundDataList.Count - 1)];
     }
 
     /*IEnumerator testas()
@@ -54,7 +54,7 @@ public class RoundSystem : MonoBehaviour
         }
 
         //StartCoroutine(testas());
-        
+
 
 
         roundNumber = 1;

@@ -66,7 +66,7 @@ Transform:
   - {fileID: 6886367466861973775}
   - {fileID: 5435123651861428172}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4994865299117103667
 MonoBehaviour:
@@ -88,6 +88,7 @@ MonoBehaviour:
   bulletSpawnPosition: {fileID: 4782043884722461238}
   animator: {fileID: 4994865299117103665}
   turret: {fileID: 9034385673753519325}
+  shootAudioClip: {fileID: 8300000, guid: 1f0ed05e86fa78c43bf4ba2b835d5b99, type: 3}
 --- !u!136 &4994865299117103666
 CapsuleCollider:
   m_ObjectHideFlags: 0

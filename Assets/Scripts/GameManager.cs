@@ -58,6 +58,10 @@ public class GameManager : MonoBehaviour
         RoundSystem.roundStartEvent.AddListener(OnRoundStarted);
         RoundSystem.roundEndEvent.AddListener(OnRoundEnded);
 
+        //default roots
+        CurrencyManager.Instance.AddRoots(5);
+        CurrencyManager.Instance.AddIncome(1);
+
         //SoundManager.Instance.PlaySound(testLoopSound, Camera.main.transform, true);
     }
 

@@ -40,6 +40,7 @@ public class CurrencyManager : MonoBehaviour
         RoundSystem.roundEndEvent.RemoveListener(OnRoundEnded);
     }
 
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.KeypadPlus))
@@ -54,6 +55,7 @@ public class CurrencyManager : MonoBehaviour
             AddIncome(-1);
         }
     }
+#endif
 
     private void OnRoundStarted()
     {

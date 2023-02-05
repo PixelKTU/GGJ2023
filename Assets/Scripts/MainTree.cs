@@ -45,6 +45,11 @@ public class MainTree : MonoBehaviour
 
     #region Health
 
+    public float GetDefaultHealth()
+    {
+        return defaultHealth;
+    }
+
     public float GetHealth()
     {
         return health;

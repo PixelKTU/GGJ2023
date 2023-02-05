@@ -117,10 +117,14 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TimeInstance: 0
+    - _Wiggle: 0
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 0
+    - _maxLeafExpantion: 1
+    - _wiggleSpeed: 0
+    - _wiggleStrength: 0
     m_Colors:
     - _BaseColor: {r: 0.27058825, g: 0.16862746, b: 0.12941177, a: 1}
     - _Color: {r: 0.2705882, g: 0.16862741, b: 0.12941173, a: 1}

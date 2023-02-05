@@ -7,7 +7,7 @@ public class VineGroth : MonoBehaviour
     MeshRenderer MR;
     Material[] materials;
     float time;
-    public float secondryScale = 1;
+    public float secondryScale = 0;
     void Start()
     {
         MR = GetComponent<MeshRenderer>();
@@ -20,7 +20,8 @@ public class VineGroth : MonoBehaviour
     {
         foreach(Material material in materials)
         {
-            material.SetFloat("_TimeInstance", Time.time - time/secondryScale);
+            material.SetFloat("_TimeInstance", Time.time - time);
+            material.SetFloat("_GrowOffset", secondryScale);
             if (material.GetFloat("_TimeInstance") * material.GetFloat("_GrowScale") > 8f)
             {
                 Destroy(this);

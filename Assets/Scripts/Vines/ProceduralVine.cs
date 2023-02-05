@@ -219,9 +219,12 @@ public class ProceduralVine : MonoBehaviour
 
                 if (building != null)
                 {
-                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << buildingLayer)).Length > 0)
+                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << 7)).Length > 0)
                     {
+                        if (!Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << 7))[0].GetComponent<Building>().occupied) 
+                        { 
                         CheckIfReachedBuildings(building);
+                    }
                     }
                 }
                 Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
@@ -258,7 +261,10 @@ public class ProceduralVine : MonoBehaviour
                         {
                             if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm).Length > 0)
                             {
-                                CheckIfReachedBuildings(building);
+                                if (!Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << 7))[0].GetComponent<Building>().occupied)
+                                {
+                                    CheckIfReachedBuildings(building);
+                                }
                             }
                         }
 

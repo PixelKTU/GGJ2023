@@ -5,15 +5,18 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     protected bool reachedByRoots = false;
+    public bool occupied = false;
 
     public virtual void EnableBuilding()
     {
         reachedByRoots = true;
+        occupied = reachedByRoots;
     }
 
     public virtual void DisableBuilding() 
     {
-        reachedByRoots = false;    
+        reachedByRoots = false;
+        occupied = reachedByRoots;
     }
 
     protected virtual void OnRoundStarted() { }

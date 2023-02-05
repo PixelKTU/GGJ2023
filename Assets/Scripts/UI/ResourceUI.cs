@@ -48,7 +48,7 @@ public class ResourceUI : MonoBehaviour
                     Destroy(image);
                     TMP.rectTransform.localPosition = new Vector3(0,TMP.rectTransform.localPosition.y +TMP.fontSize/2, 0);
                     onece = true;
-                    TMP.fontSize = 1;
+                    TMP.fontSize = 3;
                     TMP.alignment = TextAlignmentOptions.BottomGeoAligned;
                 }
                 TMP.text = "Damage: " + towerBuilding.GetTowerDamage();

@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 4913687187426263518, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.788292
+      value: -90.5
       objectReference: {fileID: 0}
     - target: {fileID: 4913687187426263518, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 4913687187426263518, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.185257
+      value: -15.2
       objectReference: {fileID: 0}
     - target: {fileID: 4913687187426263518, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
@@ -243,7 +243,7 @@ MonoBehaviour:
   branches: 3
   maxPointsForBranch: 10
   segmentLength: 0.72
-  maxSegmentRadius: 10
+  maxSegmentRadius: 2.5
   branchRadiusPerSegment: 0.025
   minbranchRadius: 0.025
   branchMaterial: {fileID: 2100000, guid: 33605ef882fe9224184003e658db7787, type: 2}

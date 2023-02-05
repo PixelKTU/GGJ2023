@@ -30,14 +30,17 @@ public class ProceduralVine : MonoBehaviour
 
     int vineCount = 0;
     int buildingLayer = 7;
-    int lm; 
+    int lm;
+
+    bool instantiateRootends = false;
+    float instantiateTimeStart = 0f;
+    List<Vector3> instantiatePositions = new List<Vector3>();
 
     private void Start()
     {
         BezierKnot knot = new BezierKnot(vineOrigin.position);
         spline.Add(knot);
         lRender = GetComponent<LineRenderer>();
-        yOffsetWeight = minbranchRadius * 4;
         lm = (1 << buildingLayer);
     }
 
@@ -71,6 +74,18 @@ public class ProceduralVine : MonoBehaviour
         //    // call this method when you are ready to group your meshes
         //    //combineAndClear();
         //}
+        if(instantiateRootends)
+        {
+            if(Time.time - instantiateTimeStart > 2)
+            {
+                instantiateRootends = false;
+                foreach(Vector3 pos in instantiatePositions)
+                {
+                    Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], pos - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
+                }
+                instantiatePositions.Clear();
+            }
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -122,6 +137,7 @@ public class ProceduralVine : MonoBehaviour
         Vine.transform.SetParent(transform);
         for (int i = 0; i < branches; i++)
         {
+            minDistance = Vector3.Distance(closestPoint, hit.point);
             //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
             segmentLength = minDistance / maxPointsForBranch;
             Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - closestPoint, Vector3.up) -90 + Random.Range(0,15/branches*i*1/maxPointsForBranch*10), Vector3.up) * tangent;
@@ -130,7 +146,7 @@ public class ProceduralVine : MonoBehaviour
             GameObject branch = new GameObject("Branch " + i);
             MeshGeneration b = branch.AddComponent<MeshGeneration>();
             VineGroth vg = branch.AddComponent<VineGroth>();
-            b.init(nodes, minbranchRadius, branchRadiusPerSegment, maxSegmentRadius, branchMaterial);
+            b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
 
             branch.transform.SetParent(Vine.transform);
 
@@ -161,19 +177,21 @@ public class ProceduralVine : MonoBehaviour
 
             if (Vector3.Distance(hit.point, nodes[nodes.Count - 1].getPosition()) > 5)
             {
+                Vector3 generationPoint = nodes[nodes.Count - 1].getPosition();
                 for (int j = 0; j < branches; j++)
                 {
-                    minDistance = Vector3.Distance(hit.point, nodes[nodes.Count - 1].getPosition());
+                    minDistance = Vector3.Distance(hit.point, generationPoint);
                     //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
                     segmentLength = minDistance / maxPointsForBranch;
-                    dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - nodes[nodes.Count - 1].getPosition(), hit.normal) - 90 + Random.Range(0, 10 / branches * j * 1 / maxPointsForBranch * 10), hit.normal) * tangent;
 
-                    nodes = createBranch(maxPointsForBranch, nodes[nodes.Count - 1].getPosition(), hit.normal, dir, j);
+                    dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, hit.point - generationPoint, Vector3.up) - 90 + Random.Range(0, 15 / branches * j * 1 / maxPointsForBranch * 10), Vector3.up) * tangent;
+
+                    nodes = createBranch(maxPointsForBranch, generationPoint, Vector3.up, dir, j);
                     branch = new GameObject("Branch " + j);
                     b = branch.AddComponent<MeshGeneration>();
                     vg = branch.AddComponent<VineGroth>();
                     vg.secondryScale = 1f;
-                    b.init(nodes, minbranchRadius, branchRadiusPerSegment, maxSegmentRadius, branchMaterial);
+                    b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
 
                     branch.transform.SetParent(Vine.transform);
 
@@ -188,33 +206,30 @@ public class ProceduralVine : MonoBehaviour
                     if (building != null)
 
 
-                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(),1f,lm) != null)
-                    {
-                        ResourceBuilding resourceBuilding;
-                        TowerBuilding towerBuilding;
-                        if (building.TryGetComponent<ResourceBuilding>(out resourceBuilding))
+                        if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
                         {
-                            resourceBuilding.EnableBuilding();
+                            ResourceBuilding resourceBuilding;
+                            TowerBuilding towerBuilding;
+                            if (building.TryGetComponent<ResourceBuilding>(out resourceBuilding))
+                            {
+                                resourceBuilding.EnableBuilding();
+                            }
+                            else if (building.TryGetComponent<TowerBuilding>(out towerBuilding))
+                            {
+                                towerBuilding.EnableBuilding();
+                            }
                         }
-                        else if (building.TryGetComponent<TowerBuilding>(out towerBuilding))
-                        {
-                            towerBuilding.EnableBuilding();
-                        }
-                    }
+                    instantiatePositions.Add(nodes[nodes.Count - 1].getPosition());
                 }
-                GameObject instance;
-                instance = Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
-                Material[] materials = instance.GetComponent<MeshRenderer>().materials;
-                //Debug.Log(materials.Length);
-                foreach (Material material in materials)
-                {
-                    material.SetFloat("_GrowOffset", 10);
-                }
-            }
+                instantiateRootends = true;
+                instantiateTimeStart = Time.time;
+                
 
-            
-            
+
+            }
         }
+
+
 
         vineCount++;
     }
@@ -264,11 +279,12 @@ public class ProceduralVine : MonoBehaviour
         }
         else if (count < maxPointsForBranch && count > 0)
         {
-            yOffsetWeight = (minbranchRadius+Mathf.Clamp(branchRadiusPerSegment*(count-i) * 4,0f, maxSegmentRadius));
+            //yOffsetWeight = (minbranchRadius+Mathf.Clamp(branchRadiusPerSegment*(count-i) * 4,0f, maxSegmentRadius));
+            yOffsetWeight = minbranchRadius + Mathf.Clamp((segmentLength * 2) / 4000 * count * (count - i), 0f, maxSegmentRadius) * 4;
 
             if (count % 2 == 0)
             {
-                dir = Quaternion.AngleAxis(Random.Range(-5.0f / branches * i, 5.0f / branches * i), normal) * dir;
+                dir = Quaternion.AngleAxis(Random.Range(-15.0f / branches * i, 15.0f / branches * i), normal) * dir;
             }
 
             RaycastHit hit;

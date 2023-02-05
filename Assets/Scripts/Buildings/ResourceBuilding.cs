@@ -23,6 +23,11 @@ public class ResourceBuilding : Building
         }
     }
 
+    public int GetBuildingIncome()
+    {
+        return buildingIncome;
+    }
+
     protected override void OnRoundEnded()
     {
         if (reachedByRoots)

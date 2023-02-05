@@ -25,7 +25,7 @@ public class TowerBuilding : Building
         if (bulletSpawnPosition != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(bulletSpawnPosition.position, 0.5f);
+            Gizmos.DrawWireSphere(bulletSpawnPosition.position, towerRange);
         }
     }
 

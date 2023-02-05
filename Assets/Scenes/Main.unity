@@ -1294,11 +1294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Tree
       objectReference: {fileID: 0}
-    - target: {fileID: 2511957387709874053, guid: c865bdc32d143034b8dc57edf7a5176b,
-        type: 3}
-      propertyPath: defaultHealth
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2130,7 +2125,7 @@ PrefabInstance:
     - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
       propertyPath: towerDamage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -2716,6 +2711,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1054015413018018171, guid: d2ecd337a32868744b646bb81e8a5f35,
+        type: 3}
+      propertyPath: buildingIncome
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1393517976062508278, guid: d2ecd337a32868744b646bb81e8a5f35,
         type: 3}
       propertyPath: m_Name
@@ -17408,6 +17408,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerTurretSINGLE
       objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: shootingCooldown
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
       propertyPath: m_RootOrder
@@ -17722,6 +17732,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: towerTurretSINGLE (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: towerDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: shootingCooldown
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -22181,7 +22201,12 @@ PrefabInstance:
     - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
       propertyPath: towerDamage
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
+        type: 3}
+      propertyPath: shootingCooldown
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -23518,7 +23543,7 @@ PrefabInstance:
     - target: {fileID: 1363469896084685982, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
       propertyPath: buildingIncome
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4913687187426263518, guid: 1a5af02a139789e4ea01199ca24bd8ba,
         type: 3}
@@ -26717,7 +26742,7 @@ PrefabInstance:
     - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
       propertyPath: towerDamage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -28157,7 +28182,7 @@ PrefabInstance:
     - target: {fileID: 4994865299117103667, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
       propertyPath: towerDamage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5627954901108424842, guid: 479d904325d8cec4baa07e9c134207de,
         type: 3}
@@ -29935,7 +29960,7 @@ PrefabInstance:
     - target: {fileID: 717704529470888381, guid: 3dd4cca45ed852d41b544556806db06d,
         type: 3}
       propertyPath: buildingIncome
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2653944672800670860, guid: 3dd4cca45ed852d41b544556806db06d,
         type: 3}
@@ -30013,7 +30038,7 @@ PrefabInstance:
     - target: {fileID: 1054015413018018171, guid: d2ecd337a32868744b646bb81e8a5f35,
         type: 3}
       propertyPath: buildingIncome
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1393517976062508278, guid: d2ecd337a32868744b646bb81e8a5f35,
         type: 3}
@@ -30096,7 +30121,7 @@ PrefabInstance:
     - target: {fileID: 1816122555985587118, guid: da99279a578070d4389b2ac67c130c44,
         type: 3}
       propertyPath: buildingIncome
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1931749799929074911, guid: da99279a578070d4389b2ac67c130c44,
         type: 3}
@@ -30166,6 +30191,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3852134371735712359, guid: 2b659a4629f8e844282d6d24772e956c,
+        type: 3}
+      propertyPath: buildingIncome
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7418628982855664959, guid: 2b659a4629f8e844282d6d24772e956c,
         type: 3}
       propertyPath: m_RootOrder
@@ -30313,6 +30343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: hidro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165209584144142849, guid: c854702b594e7bd41bb8f12c05cdc317,
+        type: 3}
+      propertyPath: buildingIncome
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30478,7 +30513,7 @@ PrefabInstance:
     - target: {fileID: 4890866763508794364, guid: 501ce9e3bc1629b4eb9060a612351fad,
         type: 3}
       propertyPath: buildingIncome
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30564,7 +30599,7 @@ PrefabInstance:
     - target: {fileID: 6193023975925981053, guid: 28f73bf826616b747a90f93060823395,
         type: 3}
       propertyPath: buildingIncome
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

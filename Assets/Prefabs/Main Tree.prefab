@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17a20ccb2c8dac4a8d933c3db273157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 0
   towerRange: 22
-  towerDamage: 2
+  towerDamage: 3
   shootingCooldown: 0.5
   bulletPrefab: {fileID: 9218508020589602165, guid: d5e940c85f12a91429f7e65844cc1f2e,
     type: 3}

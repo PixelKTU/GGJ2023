@@ -121,7 +121,7 @@ Material:
     - _Rippledensity: 149.04
     - _Rippleslimness: 4.98
     - _Ripplespeed: 0.5
-    - _Scale: 1
+    - _Scale: 0.5
     - _Smoothness: 0.729
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

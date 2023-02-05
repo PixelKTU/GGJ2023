@@ -24,6 +24,7 @@ public class ResourceUI : MonoBehaviour
         TMP = GetComponentInChildren<TextMeshProUGUI>();
         root.TryGetComponent<ResourceBuilding>(out resourceBuilding);
         root.TryGetComponent<TowerBuilding>(out towerBuilding);
+        camera = Camera.main;
     }
 
     // Update is called once per frame

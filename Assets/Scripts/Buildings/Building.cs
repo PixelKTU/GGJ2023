@@ -9,7 +9,6 @@ public class Building : MonoBehaviour
     public virtual void EnableBuilding()
     {
         reachedByRoots = true;
-
     }
 
     public virtual void DisableBuilding() 

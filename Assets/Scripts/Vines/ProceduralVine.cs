@@ -20,6 +20,7 @@ public class ProceduralVine : MonoBehaviour
     public float branchRadiusPerSegment = 0.02f;
     public float minbranchRadius = 0.02f;
     public float maxdistance = 10f;
+    public float maxsegment = 8f;
     [Space]
     public float vineDamage = 1f;
     [Space]
@@ -34,7 +35,6 @@ public class ProceduralVine : MonoBehaviour
     float minDistance = float.MaxValue;
     public Spline spline;
     GameObject building = null;
-    CurrencyManager currencyManager;
 
     int vineCount = 0;
     int buildingLayer = 7;
@@ -65,6 +65,7 @@ public class ProceduralVine : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.WaitingForRound)
         {
+            maxdistance = CurrencyManager.Instance.GetRoots() * maxsegment;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
@@ -78,9 +79,6 @@ public class ProceduralVine : MonoBehaviour
                         closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);// + transform.position;
                     }
                 }
-                segmentLength = minDistance / maxPointsForBranch;
-                lRender.SetPosition(0, closestPoint);
-                lRender.SetPosition(1, closestPoint + (hit.point - closestPoint).normalized * minDistance);
             }
 
             segmentLength = minDistance / maxPointsForBranch;
@@ -156,116 +154,122 @@ public class ProceduralVine : MonoBehaviour
 
     public void createVine(RaycastHit hit)
     {
-        //Search for closest point
-
-        minDistance = float.MaxValue;
-        foreach (BezierKnot knots in spline)
+        maxdistance = CurrencyManager.Instance.GetRoots() * 8f;
+        if (maxdistance != 0)
         {
-            if (minDistance > Vector3.Distance(knots.Position, hit.point))
+            //Search for closest point
+
+            minDistance = float.MaxValue;
+            foreach (BezierKnot knots in spline)
             {
-                minDistance = Vector3.Distance(new Vector3(knots.Position.x, knots.Position.y, knots.Position.z), hit.point);
-                closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);
-            }
-        }
-
-        Vector3 targetPoint;
-
-        if(minDistance < maxdistance)
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = closestPoint + (hit.point - closestPoint).normalized * maxdistance;
-            minDistance = maxdistance;
-            
-        }
-
-        Vector3 tangent = findTangentFromArbitraryNormal(Vector3.up);
-        GameObject Vine = new GameObject("Vine " + vineCount);
-        Vine.transform.SetParent(transform);
-        for (int i = 0; i < branches; i++)
-        {
-            minDistance = Vector3.Distance(closestPoint, targetPoint);
-            //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
-            segmentLength = minDistance / maxPointsForBranch;
-
-            Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, targetPoint - closestPoint, Vector3.up) -90 + Random.Range(0,15/branches*i*1/maxPointsForBranch*10), Vector3.up) * tangent;
-
-            List<Vine> nodes = createBranch(maxPointsForBranch, closestPoint, Vector3.up, dir, i);
-            GameObject branch = new GameObject("Branch " + i);
-            MeshGeneration b = branch.AddComponent<MeshGeneration>();
-            VineGroth vg = branch.AddComponent<VineGroth>();
-            b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
-
-            branch.transform.SetParent(Vine.transform);
-
-            int pointOffset = nodes.Count - maxPointsForBranch;
-
-            for (int j = pointOffset + 1; j < pointOffset + maxPointsForBranch; j++)
-            {
-                BezierKnot knot = new BezierKnot(nodes[j].getPosition());
-                spline.Add(knot);
-            }
-
-            if (building != null)
-            {
-                if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                if (minDistance > Vector3.Distance(knots.Position, hit.point))
                 {
-                    CheckIfReachedBuildings(building);
+                    minDistance = Vector3.Distance(new Vector3(knots.Position.x, knots.Position.y, knots.Position.z), hit.point);
+                    closestPoint = new Vector3(knots.Position.x, knots.Position.y, knots.Position.z);
                 }
             }
-            Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
 
-            if (Vector3.Distance(targetPoint, nodes[nodes.Count - 1].getPosition()) > 5)
+            Vector3 targetPoint;
+
+            if (minDistance < maxdistance)
             {
-                Vector3 generationPoint = nodes[nodes.Count - 1].getPosition();
-                for (int j = 0; j < branches; j++)
+                targetPoint = hit.point;
+            }
+            else
+            {
+                targetPoint = closestPoint + (hit.point - closestPoint).normalized * maxdistance;
+                minDistance = maxdistance;
+
+            }
+
+            CurrencyManager.Instance.AddRoots(-Mathf.CeilToInt(minDistance / maxsegment));
+
+            Vector3 tangent = findTangentFromArbitraryNormal(Vector3.up);
+            GameObject Vine = new GameObject("Vine " + vineCount);
+            Vine.transform.SetParent(transform);
+            for (int i = 0; i < branches; i++)
+            {
+                minDistance = Vector3.Distance(closestPoint, targetPoint);
+                //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
+                segmentLength = minDistance / maxPointsForBranch;
+
+                Vector3 dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, targetPoint - closestPoint, Vector3.up) - 90 + Random.Range(0, 15 / branches * i * 1 / maxPointsForBranch * 10), Vector3.up) * tangent;
+
+                List<Vine> nodes = createBranch(maxPointsForBranch, closestPoint, Vector3.up, dir, i);
+                GameObject branch = new GameObject("Branch " + i);
+                MeshGeneration b = branch.AddComponent<MeshGeneration>();
+                VineGroth vg = branch.AddComponent<VineGroth>();
+                b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
+
+                branch.transform.SetParent(Vine.transform);
+
+                int pointOffset = nodes.Count - maxPointsForBranch;
+
+                for (int j = pointOffset + 1; j < pointOffset + maxPointsForBranch; j++)
                 {
-                    minDistance = Vector3.Distance(targetPoint, generationPoint);
-                    //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
-                    segmentLength = minDistance / maxPointsForBranch;
+                    BezierKnot knot = new BezierKnot(nodes[j].getPosition());
+                    spline.Add(knot);
+                }
 
-                    dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, targetPoint - generationPoint, Vector3.up) - 90 + Random.Range(0, 15 / branches * j * 1 / maxPointsForBranch * 10), Vector3.up) * tangent;
-
-                    nodes = createBranch(maxPointsForBranch, generationPoint, Vector3.up, dir, j);
-                    branch = new GameObject("Branch " + j);
-                    b = branch.AddComponent<MeshGeneration>();
-                    vg = branch.AddComponent<VineGroth>();
-                    vg.secondryScale = 1f;
-                    b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
-
-                    branch.transform.SetParent(Vine.transform);
-
-                    pointOffset = nodes.Count - maxPointsForBranch;
-
-                    for (int k = pointOffset + 1; k < pointOffset + maxPointsForBranch; k++)
+                if (building != null)
+                {
+                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
                     {
-                        BezierKnot knot = new BezierKnot(nodes[k].getPosition());
-                        spline.Add(knot);
+                        CheckIfReachedBuildings(building);
                     }
+                }
+                Instantiate(vineEndings[Random.Range(0, vineEndings.Length)], nodes[nodes.Count - 1].getPosition() - Vector3.up * 0.08f, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up) * Quaternion.AngleAxis(-90, Vector3.right));
 
-                    if (building != null)
+                if (Vector3.Distance(targetPoint, nodes[nodes.Count - 1].getPosition()) > 5)
+                {
+                    Vector3 generationPoint = nodes[nodes.Count - 1].getPosition();
+                    for (int j = 0; j < branches; j++)
                     {
-                        if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                        minDistance = Vector3.Distance(targetPoint, generationPoint);
+                        //maxPointsForBranch = Mathf.Clamp(Mathf.CeilToInt(minDistance / segmentLength), 2, int.MaxValue);
+                        segmentLength = minDistance / maxPointsForBranch;
+
+                        dir = Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, targetPoint - generationPoint, Vector3.up) - 90 + Random.Range(0, 15 / branches * j * 1 / maxPointsForBranch * 10), Vector3.up) * tangent;
+
+                        nodes = createBranch(maxPointsForBranch, generationPoint, Vector3.up, dir, j);
+                        branch = new GameObject("Branch " + j);
+                        b = branch.AddComponent<MeshGeneration>();
+                        vg = branch.AddComponent<VineGroth>();
+                        vg.secondryScale = 1f;
+                        b.init(nodes, minbranchRadius, segmentLength, maxSegmentRadius, branchMaterial);
+
+                        branch.transform.SetParent(Vine.transform);
+
+                        pointOffset = nodes.Count - maxPointsForBranch;
+
+                        for (int k = pointOffset + 1; k < pointOffset + maxPointsForBranch; k++)
                         {
-                            CheckIfReachedBuildings(building);
+                            BezierKnot knot = new BezierKnot(nodes[k].getPosition());
+                            spline.Add(knot);
                         }
+
+                        if (building != null)
+                        {
+                            if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                            {
+                                CheckIfReachedBuildings(building);
+                            }
+                        }
+
+                        instantiatePositions.Add(nodes[nodes.Count - 1].getPosition());
                     }
+                    instantiateRootends = true;
+                    instantiateTimeStart = Time.time;
 
-                    instantiatePositions.Add(nodes[nodes.Count - 1].getPosition());
+
+
                 }
-                instantiateRootends = true;
-                instantiateTimeStart = Time.time;
-
-
-
             }
+
+
+
+            vineCount++;
         }
-
-
-
-        vineCount++;
     }
 
     void CheckIfReachedBuildings(GameObject objectToCheck)

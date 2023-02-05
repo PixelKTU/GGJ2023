@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 215.9514
       objectReference: {fileID: 0}
     - target: {fileID: 2051696241, guid: da19ed014999e60458a60e27f40d74d2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26073,6 +26073,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7841058752346473969, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
+        type: 3}
+      propertyPath: audioSourceOneShot
+      value: 
+      objectReference: {fileID: 2026234414}
     - target: {fileID: 5069582679768343152, guid: 19b89a5ad63a9164c81e25da8c4a86b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -29081,6 +29086,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -533235580197337486, guid: 3e7d0ba71fcfd324499a1ba618459749, type: 3}
+--- !u!82 &2026234414 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8368996837090132258, guid: 96639d1ceea0e6e43833bff5dc246256,
+    type: 3}
+  m_PrefabInstance: {fileID: 1946211091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2031143264
 PrefabInstance:
   m_ObjectHideFlags: 0

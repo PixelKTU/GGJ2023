@@ -219,7 +219,7 @@ public class ProceduralVine : MonoBehaviour
 
                 if (building != null)
                 {
-                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                    if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << buildingLayer)).Length > 0)
                     {
                         CheckIfReachedBuildings(building);
                     }
@@ -256,7 +256,7 @@ public class ProceduralVine : MonoBehaviour
 
                         if (building != null)
                         {
-                            if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm) != null)
+                            if (Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, lm).Length > 0)
                             {
                                 CheckIfReachedBuildings(building);
                             }

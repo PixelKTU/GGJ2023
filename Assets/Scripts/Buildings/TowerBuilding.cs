@@ -15,6 +15,8 @@ public class TowerBuilding : Building
     [SerializeField] Animator animator;
     [SerializeField] Transform turret;
 
+    [SerializeField] AudioClip shootAudioClip;
+
 
     bool isShooting = false;
     bool onCooldown = false;
@@ -29,7 +31,6 @@ public class TowerBuilding : Building
         }
     }
 
-
     IEnumerator CooldownWait()
     {
         yield return new WaitForSeconds(shootingCooldown);
@@ -42,6 +43,11 @@ public class TowerBuilding : Building
         {
             animator.SetTrigger("Shoot");
             //turret.LookAt(enemy.transform);bad model for now
+        }
+
+        if (shootAudioClip != null)
+        {
+            SoundManager.Instance.PlaySound(shootAudioClip, transform.position);
         }
 
         enemy.GetComponent<Enemy>().TakeImaginaryDamage(towerDamage);

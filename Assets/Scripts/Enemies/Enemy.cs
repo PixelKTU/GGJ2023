@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -34,7 +35,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Animator animator;
     [SerializeField] protected NavMeshAgent agent;
 
+    [Header("Sounds")]
+    [SerializeField] protected AudioClip[] walkingSounds;
+    [SerializeField] protected AudioClip attackSound;
 
+    [SerializeField] private float walkAudioCooldownTime = 1;
+    private float walkAudioTime = 0;
 
     private Transform target;
     private float currentAttackTime;
@@ -67,6 +73,11 @@ public class Enemy : MonoBehaviour
                         animator.SetTrigger("Attack");
                         animator.SetBool("IsWalking", false);
                         MainTree.Instance.TakeDamage(damage);
+
+                        if (attackSound != null)
+                        {
+                            SoundManager.Instance.PlaySound(attackSound, transform);
+                        }
                     }
                     else
                     {
@@ -82,6 +93,20 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case EnemyState.Walking:
+
+                if (!agent.isStopped)
+                {
+                    walkAudioTime += Time.deltaTime;
+
+                    if (walkAudioTime >= walkAudioCooldownTime)
+                    {
+                        walkAudioTime = 0;
+                        if (walkingSounds != null && walkingSounds.Length > 0)
+                        {
+                            SoundManager.Instance.PlaySound(walkingSounds, transform);
+                        }
+                    }
+                }
 
                 if (agent.isStopped)
                 {

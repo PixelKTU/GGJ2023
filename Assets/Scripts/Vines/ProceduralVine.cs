@@ -223,13 +223,14 @@ public class ProceduralVine : MonoBehaviour
                     {
                         Building buildingC = Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << 7))[0].GetComponent<Building>();
 
-                        if (buildingC != null && !buildingC.occupied)
+                        if (buildingC != null)
                         {
-                            CheckIfReachedBuildings(buildingC.gameObject);
+                            if(!buildingC.occupied)
+                            CheckIfReachedBuildings(buildingC.gameObject, building);
                         }
                         else
                         {
-                            CheckIfReachedBuildings(building);
+                            CheckIfReachedBuildings(building, building);
                         }
                     }
                 }
@@ -269,13 +270,14 @@ public class ProceduralVine : MonoBehaviour
                             {
                                 Building buildingC = Physics.OverlapSphere(nodes[nodes.Count - 1].getPosition(), 1f, (1 << 7))[0].GetComponent<Building>();
 
-                                if (buildingC != null && !buildingC.occupied)
+                                if (buildingC != null)
                                 {
-                                    CheckIfReachedBuildings(buildingC.gameObject);
+                                    if (!buildingC.occupied)
+                                        CheckIfReachedBuildings(buildingC.gameObject, building);
                                 }
                                 else
                                 {
-                                    CheckIfReachedBuildings(building);
+                                    CheckIfReachedBuildings(building, building);
                                 }
                             }
                         }
@@ -296,20 +298,24 @@ public class ProceduralVine : MonoBehaviour
         }
     }
 
-    void CheckIfReachedBuildings(GameObject objectToCheck)
+    void CheckIfReachedBuildings(GameObject objectToCheck, GameObject clickedbuilding)
     {
         Building building;
         EnemyBase enemyBase;
-
-        if (objectToCheck.TryGetComponent<Building>(out building))
+        
+        if(clickedbuilding == objectToCheck)
         {
-            building.EnableBuilding();
-        }
+            if (objectToCheck.TryGetComponent<Building>(out building))
+            {
+                building.EnableBuilding();
+            }
 
-        if (objectToCheck.TryGetComponent<EnemyBase>(out enemyBase))
-        {
-            enemyBase.TakeDamage(vineDamage);
+            if (objectToCheck.TryGetComponent<EnemyBase>(out enemyBase))
+            {
+                enemyBase.TakeDamage(vineDamage);
+            }
         }
+        
     }
 
     Vector3 calculateTangent(Vector3 p0, Vector3 p1, Vector3 normal)
